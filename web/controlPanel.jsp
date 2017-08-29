@@ -173,7 +173,7 @@
             </div>
             <div id="divLeftBlackSpace">
                 <div id="divLeftBlackSpace_management">Management</div>
-                <div id="allUsers"> <a href="">All Users</a></div>
+                <div id="allUsers"> <a href="usersAll.jsp">All Users</a></div>
             </div>
             <div id="divTopWhiteSpece">
                 <div id="divTopWhiteSpece_lblDashBoard">Dashboard   /</div>
