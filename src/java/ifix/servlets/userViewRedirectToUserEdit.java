@@ -5,7 +5,6 @@
  */
 package ifix.servlets;
 
-import ifix.controller.userController;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -18,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author 4m4l
  */
-@WebServlet(name = "userAdd", urlPatterns = {"/userAdd"})
-public class userAdd extends HttpServlet {
+@WebServlet(name = "userViewRedirectToUserEdit", urlPatterns = {"/userViewRedirectToUserEdit"})
+public class userViewRedirectToUserEdit extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and
@@ -33,20 +32,9 @@ public class userAdd extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+      PrintWriter out = response.getWriter();
         try {
-            String userName = request.getParameter("uname");
-            String address = request.getParameter("address");
-            String contact = request.getParameter("contact");
-            String email = request.getParameter("email");
-            String password = request.getParameter("password");
-
-            boolean op = userController.addUser(userName, address, contact, email, password);
-
-            if (op) {
-                response.sendRedirect("userAdd.jsp");
-            }
-
+            response.sendRedirect("userEdit.jsp"); 
         } catch (Exception e) {
         }
     }

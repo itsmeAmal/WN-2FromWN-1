@@ -19,17 +19,19 @@ import java.sql.SQLException;
  */
 public class userDaoImpl implements userDao {
 
-    private String selectQuery = "SELECT user_id, user_name, user_address, user_contact, user_status FROM user";
+    private String selectQuery = "SELECT user_id, user_name, user_address, user_contact, user_status, user_email, user_password  FROM user";
 
     @Override
     public boolean addUser(User user) throws SQLException {
         Connection con = DatabaseConnection2.getDatabaseConnection();
-        PreparedStatement ps = con.prepareStatement("INSERT INTO user(user_id, user_name, user_address, user_contact, user_status) VALUES (?,?,?,?,?)");
-        ps.setInt(1, user.getUserId());
-        ps.setString(2, user.getUserName());
-        ps.setString(3, user.getUserAddress());
-        ps.setString(4, user.getContact());
-        ps.setInt(5, user.getSatus());
+        PreparedStatement ps = con.prepareStatement("INSERT INTO user(user_name, user_address, user_contact, user_status, user_email, user_password) VALUES (?,?,?,?,?,?)");
+        ps.setString(1, user.getUserName());
+        ps.setString(2, user.getUserAddress());
+        ps.setString(3, user.getContact());
+        ps.setInt(4, user.getSatus());
+        ps.setString(5, user.getEmail());
+        ps.setString(6, user.getPassword());
+
         ps.executeUpdate();
         ps.close();
         return true;
@@ -38,13 +40,13 @@ public class userDaoImpl implements userDao {
     @Override
     public boolean updateUser(User user) throws SQLException {
         Connection con = DatabaseConnection2.getDatabaseConnection();
-        PreparedStatement ps = con.prepareStatement("UPDATE user SET user_id=?, user_name=?, user_address=?, user_contact=?, user_status=? WHERE user_id=?");
-        ps.setInt(1, user.getUserId());
-        ps.setString(2, user.getUserName());
-        ps.setString(3, user.getUserAddress());
-        ps.setString(4, user.getContact());
-        ps.setInt(5, user.getSatus());
-        ps.setInt(1, user.getUserId());
+        PreparedStatement ps = con.prepareStatement("UPDATE user SET user_name=?, user_address=?, user_contact=?, user_status=?, user_password=? WHERE user_id=?");
+        ps.setString(1, user.getUserName());
+        ps.setString(2, user.getUserAddress());
+        ps.setString(3, user.getContact());
+        ps.setInt(4, user.getSatus());
+        ps.setString(5, user.getPassword());
+        ps.setInt(6, user.getUserId());
         ps.executeUpdate();
         ps.close();
         return true;
@@ -76,6 +78,8 @@ public class userDaoImpl implements userDao {
             user.setUserAddress(resultSet.getString("user_address"));
             user.setContact(resultSet.getString("user_contact"));
             user.setSatus(resultSet.getInt("user_status"));
+            user.setEmail(resultSet.getString("user_email"));
+            user.setPassword(resultSet.getString("user_password"));
         }
         return user;
     }
@@ -90,6 +94,11 @@ public class userDaoImpl implements userDao {
             maxuserId = rset.getInt(1);
         }
         return ++maxuserId;
+    }
+
+    @Override
+    public ResultSet getUsersByOneAttribute(String attribute, String condition, String value) throws SQLException {
+        return new commonDaoImpl().getResultByAttribute(selectQuery, attribute, condition, value);
 
     }
 }

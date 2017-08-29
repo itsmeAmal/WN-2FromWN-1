@@ -26,4 +26,6 @@ public interface userDao {
     User getFirstUserFromResultset(ResultSet resultSet)throws SQLException;
     
     int getNextUserId()throws SQLException;
+    
+    ResultSet getUsersByOneAttribute(String attribute, String condition, String value)throws SQLException; 
 }

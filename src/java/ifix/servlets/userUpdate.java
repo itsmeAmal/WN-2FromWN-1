@@ -5,13 +5,16 @@
  */
 package ifix.servlets;
 
+import ifix.controller.userController;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -34,8 +37,22 @@ public class userUpdate extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            
-        } catch (Exception e) {
+
+            HttpSession hs = request.getSession();
+            String userId = (String) hs.getAttribute("userId");
+
+            String userName = request.getParameter("uname");
+            String address = request.getParameter("address");
+            String contact = request.getParameter("contact");
+            String email = request.getParameter("email");
+            String password = request.getParameter("password");
+
+            boolean state = userController.updateUser(userName, address, contact, password, userId);
+            if (state) {
+                hs.removeAttribute("userId");
+            }
+            response.sendRedirect("userView.jsp");
+        } catch (SQLException e) {
         }
     }
 

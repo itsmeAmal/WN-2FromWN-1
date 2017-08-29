@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author 4m4l
  */
-@WebServlet(name = "userAdd", urlPatterns = {"/userAdd"})
-public class userAdd extends HttpServlet {
+@WebServlet(name = "userRemove", urlPatterns = {"/userRemove"})
+public class userRemove extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and
@@ -35,16 +35,10 @@ public class userAdd extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            String userName = request.getParameter("uname");
-            String address = request.getParameter("address");
-            String contact = request.getParameter("contact");
-            String email = request.getParameter("email");
-            String password = request.getParameter("password");
-
-            boolean op = userController.addUser(userName, address, contact, email, password);
-
-            if (op) {
-                response.sendRedirect("userAdd.jsp");
+            String userId = request.getParameter("hiddenId");
+            boolean status = userController.removeUser(userId);
+            if (status) {
+                response.sendRedirect("usersAll.jsp");
             }
 
         } catch (Exception e) {

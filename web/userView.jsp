@@ -4,6 +4,7 @@
     Author     : 4m4l
 --%>
 
+<%@page import="ifix.model.User"%>
 <%@page import="ifix.controller.userController"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -72,7 +73,7 @@
                 left: 35%;
                 width: 250px;
                 height: 30px;
-                top: 88%;
+                top: 60%;
             }
 
             #backtohomelink{
@@ -91,41 +92,38 @@
                 background-image: url("com.official.cazzendra.logos/3.png");
             }
 
-
         </style>
     </head>
     <body style="background-color: #000000;">
-        <form action="userAdd" method="post">
+        <form action="userViewRedirectToUserEdit" method="post">
+            <%
+                String userId = "20";
+                User user = userController.getuserByUserId(userId);
+                HttpSession hs = request.getSession();
+                hs.setAttribute("userId", userId);
+            %>
+
             <div style="position: absolute; left: 20%; width: 60%; top: 5%; height: 85%; background-color: #ffffff;" />
             <div id="logo"></div>
 
             <div id="uname">
-                <input type="text" name="uname" placeholder="Name" class="form-control" required />
+                <div class="form-control"><%=user.getUserName()%></div>
             </div> 
             <div id="address">
-                <input type="text" name="address" placeholder="Address" class="form-control" required />
+                <div class="form-control"><%=user.getUserAddress()%></div>
             </div>
             <div id="contact">
-                <input type="text" name="contact" placeholder="Contact" class="form-control" required />
+                <div class="form-control"><%=user.getContact()%></div>
             </div>
 
             <div id="email">
-                <input type="text" name="email" placeholder="Email" class="form-control" required />
-            </div>
-            <div id="pw">
-                <input type="text" name="password" placeholder="Password" class="form-control" required />
+                <div class="form-control"><%=user.getEmail()%></div>
             </div>
 
-            <div id="agreement">
-                <p style="color: #000000;">
-                    By Registering, you agree that you've read and accepted our user agreement,
-                    you're at least 18 years old, and consent to our privacy notice and receiving
-                    marketing communications from us.
-                </p>
-            </div>
             <div id="btn_2">
-                <input type="Submit" value="Submit" class="form-control" style="color: #ffffff; background-color: #0099ff; alignment-adjust: middle; "  />
+                <input type="submit" name="btn-1" class="btn btn-success" style="color: #ffffff; background-color: #0099ff; width: 250px" Value="Edit Profile"/>
             </div>
+
         </div>
 
     </form>

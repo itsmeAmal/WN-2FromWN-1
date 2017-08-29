@@ -151,6 +151,16 @@
                 height: 30px;
                 color: #ffffff;
             }
+            #allUsers{
+                position: absolute;
+                left: 25%;
+                width: 80%;
+                height: 30px;
+                top: 20%;
+                color: #ffffff;
+                font-weight: 200;
+                font-family: serif;
+            }
         </style>
     </head>
     <body>
@@ -163,7 +173,7 @@
             </div>
             <div id="divLeftBlackSpace">
                 <div id="divLeftBlackSpace_management">Management</div>
-
+                <div id="allUsers"> <a href="">All Users</a></div>
             </div>
             <div id="divTopWhiteSpece">
                 <div id="divTopWhiteSpece_lblDashBoard">Dashboard   /</div>

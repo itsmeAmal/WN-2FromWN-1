@@ -4,6 +4,7 @@
     Author     : 4m4l
 --%>
 
+<%@page import="ifix.model.User"%>
 <%@page import="ifix.controller.userController"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -95,37 +96,49 @@
         </style>
     </head>
     <body style="background-color: #000000;">
-        <form action="userAdd" method="post">
+        <form action="userUpdate" method="post">
             <div style="position: absolute; left: 20%; width: 60%; top: 5%; height: 85%; background-color: #ffffff;" />
             <div id="logo"></div>
+            <%
+                HttpSession hs = request.getSession();
+                String userId = (String) hs.getAttribute("userId");
+
+                userController userController1 = new userController();
+                User user = userController1.getuserByUserId(userId);
+
+            %>
+
+
 
             <div id="uname">
-                <input type="text" name="uname" placeholder="Name" class="form-control" required />
+                <input type="text" name="uname" placeholder="Name" class="form-control" value="<%= user.getUserName() %>" required />
             </div> 
             <div id="address">
-                <input type="text" name="address" placeholder="Address" class="form-control" required />
+                <input type="text" name="address" placeholder="Address" class="form-control" value="<%= user.getUserAddress() %>" required />
             </div>
             <div id="contact">
-                <input type="text" name="contact" placeholder="Contact" class="form-control" required />
+                <input type="text" name="contact" placeholder="Contact" class="form-control" value="<%= user.getContact() %>" required />
             </div>
 
             <div id="email">
-                <input type="text" name="email" placeholder="Email" class="form-control" required />
+                <div class="form-control"> <%= user.getEmail() %></div> 
+                <input type="hidden" name="email" value="<%= user.getEmail() %>" />
             </div>
             <div id="pw">
-                <input type="text" name="password" placeholder="Password" class="form-control" required />
+                <input type="text" name="password" placeholder="Password" class="form-control" value="<%= user.getPassword() %>" required />
             </div>
 
             <div id="agreement">
                 <p style="color: #000000;">
-                    By Registering, you agree that you've read and accepted our user agreement,
-                    you're at least 18 years old, and consent to our privacy notice and receiving
-                    marketing communications from us.
+                    The details you entered will be updated to your profile.
                 </p>
             </div>
             <div id="btn_2">
-                <input type="Submit" value="Submit" class="form-control" style="color: #ffffff; background-color: #0099ff; alignment-adjust: middle; "  />
+                <input type="Submit" value="Update" class="form-control" style="color: #ffffff; background-color: #0099ff; alignment-adjust: middle; "  />
             </div>
+            
+            
+            
         </div>
 
     </form>
