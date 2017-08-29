@@ -19,12 +19,12 @@ import java.sql.SQLException;
  */
 public class laptopModelDaoImpl implements laptopModelDao {
 
-    private String selectQuery = "SELECT laptop_model_id, laptop_model_laptop_id, laptop_model_hard_disk, laptop_model_ram, laptop_model_vga, laptop_model_processor, laptop_model_usb_type_1, laptop_model_usb_type_2, laptop_model_hdmi, laptop_model_vga_output, laptop_model_screen_size, laptop_model_cache_memory, laptop_model_status FROM laptop_model";
+    private String selectQuery = "SELECT laptop_model_id, laptop_model_laptop_id, laptop_model_hard_disk, laptop_model_ram, laptop_model_vga, laptop_model_processor, laptop_model_usb_type_1, laptop_model_usb_type_2, laptop_model_hdmi, laptop_model_vga_output, laptop_model_screen_size, laptop_model_cache_memory, laptop_model_status, laptop_model_image_path FROM laptop_model";
 
     @Override
     public void addLaptopModel(LaptopModel laptopModel) throws SQLException {
         Connection con = DatabaseConnection2.getDatabaseConnection();
-        PreparedStatement ps = con.prepareStatement("INSERT INTO laptop_model(laptop_model_id, laptop_model_laptop_id, laptop_model_hard_disk, laptop_model_ram, laptop_model_vga, laptop_model_processor, laptop_model_usb_type_1, laptop_model_usb_type_2, laptop_model_hdmi,laptop_model_status) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        PreparedStatement ps = con.prepareStatement("INSERT INTO laptop_model(laptop_model_id, laptop_model_laptop_id, laptop_model_hard_disk, laptop_model_ram, laptop_model_vga, laptop_model_processor, laptop_model_usb_type_1, laptop_model_usb_type_2, laptop_model_hdmi,laptop_model_status, laptop_model_image_path) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         ps.setInt(1, laptopModel.getLaptopModelId());
         ps.setInt(2, laptopModel.getLaptopModelLaptopId());
         ps.setString(3, laptopModel.getLaptopModelHardDisk());
@@ -38,6 +38,7 @@ public class laptopModelDaoImpl implements laptopModelDao {
         ps.setString(11, laptopModel.getLaptopModelScreenSize());
         ps.setInt(12, laptopModel.getLaotopModelCacheMemory());
         ps.setInt(13, laptopModel.getLaptopModelStatus());
+        ps.setString(14, laptopModel.getLaptopImagePath()); 
         ps.executeQuery();
         ps.close();
     }
@@ -45,7 +46,7 @@ public class laptopModelDaoImpl implements laptopModelDao {
     @Override
     public void updateLaptopModel(LaptopModel laptopModel) throws SQLException {
         Connection con = DatabaseConnection2.getDatabaseConnection();
-        PreparedStatement ps = con.prepareStatement("UPDATE laptop_model SET laptop_model_id=?, laptop_model_laptop_id=?, laptop_model_hard_disk=?, laptop_model_ram=?, laptop_model_vga=?, laptop_model_processor=?, laptop_model_usb_type_1=?, laptop_model_usb_type_2=?, laptop_model_hdmi=?, laptop_model_vga_output=?, laptop_model_screen_size=?, laptop_model_cache_memory=?, laptop_model_status=? WHERE laptop_model_id=?");
+        PreparedStatement ps = con.prepareStatement("UPDATE laptop_model SET laptop_model_id=?, laptop_model_laptop_id=?, laptop_model_hard_disk=?, laptop_model_ram=?, laptop_model_vga=?, laptop_model_processor=?, laptop_model_usb_type_1=?, laptop_model_usb_type_2=?, laptop_model_hdmi=?, laptop_model_vga_output=?, laptop_model_screen_size=?, laptop_model_cache_memory=?, laptop_model_status=?, laptop_model_image_path=? WHERE laptop_model_id=?");
         ps.setInt(1, laptopModel.getLaptopModelId());
         ps.setInt(2, laptopModel.getLaptopModelLaptopId());
         ps.setString(3, laptopModel.getLaptopModelHardDisk());
@@ -59,7 +60,8 @@ public class laptopModelDaoImpl implements laptopModelDao {
         ps.setString(11, laptopModel.getLaptopModelScreenSize());
         ps.setInt(12, laptopModel.getLaotopModelCacheMemory());
         ps.setInt(13, laptopModel.getLaptopModelStatus());
-        ps.setInt(14, laptopModel.getLaptopModelId());
+        ps.setString(14, laptopModel.getLaptopImagePath());
+        ps.setInt(15, laptopModel.getLaptopModelId()); 
         ps.executeQuery();
         ps.close();
 

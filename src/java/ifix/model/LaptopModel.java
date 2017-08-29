@@ -22,7 +22,8 @@ public class LaptopModel {
     private boolean laptopModelVgaUotput;
     private String laptopModelScreenSize;
     private int laptopModelCacheMemory;
-    private int laptopModelStatus;    
+    private int laptopModelStatus; 
+    private String laptopImagePath;
 
     /**
      * @return the laptopModelId
@@ -204,5 +205,19 @@ public class LaptopModel {
      */
     public void setLaotopModelCacheMemory(int laotopModelCacheMemory) {
         this.laptopModelCacheMemory = laotopModelCacheMemory;
+    }
+
+    /**
+     * @return the laptopImagePath
+     */
+    public String getLaptopImagePath() {
+        return laptopImagePath;
+    }
+
+    /**
+     * @param laptopImagePath the laptopImagePath to set
+     */
+    public void setLaptopImagePath(String laptopImagePath) {
+        this.laptopImagePath = laptopImagePath;
     }
 }
