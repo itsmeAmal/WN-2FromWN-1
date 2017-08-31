@@ -4,6 +4,8 @@
     Author     : 4m4l
 --%>
 
+<%@page import="ifix.dao.Impl.laptopModelDaoImpl"%>
+<%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -28,7 +30,19 @@
                 <div style="position: absolute; left: 20%; width: 60%; top: 10%; height: 80%; background-color: #ffffff;">
                     <div id="logo"></div>
                     <div style="position: absolute; left: 30%; top: 25%; width: 250px; height: 30px;">Laptop Model ID</div>
-                    <div style="position: absolute; left: 30%; top: 30%; width: 250px; height: 30px;"><select class="form-control" name="model"><option>Dell 3543 Core i3</option>></select></div>
+                    <%
+                        laptopModelDaoImpl lapModelDaoImpl = new laptopModelDaoImpl();
+                        ResultSet rset = lapModelDaoImpl.getAllLaptopModelsDistincs();
+                    %>
+
+                    <div style="position: absolute; left: 30%; top: 30%; width: 250px; height: 30px;"><select class="form-control" name="model">
+                            <%                                while (rset.next()) {
+                            %>          
+                            <option><%= rset.getString("laptop_model_laptop_id")%></option>>
+                                <%
+                                    }
+                                %>
+                        </select></div>
 
                     <div style="position: absolute; left: 30%; top: 40%; width: 250px; height: 30px;"><input type="text" name="buying_price" placeholder="Buying Price" class="form-control" /></div>
                     <div style="position: absolute; left: 30%; top: 50%; width: 250px; height: 30px;"><input type="text" name="selling_price" placeholder="Selling Price" class="form-control" /></div>

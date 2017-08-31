@@ -288,7 +288,7 @@
             <div id="logo">
             </div>
             <div id="login_1">
-                <a href="login_1.jsp" style="font-family: inherit; font-size: 18px; font-weight: 100; text-align: center" >Administrator Login</a>
+                <a href="controlPanel.jsp" style="font-family: inherit; font-size: 18px; font-weight: 100; text-align: center" >Administrator Login</a>
             </div>
             <div id="hotline">
                 Hot Line - +(0)94 71 1023 694

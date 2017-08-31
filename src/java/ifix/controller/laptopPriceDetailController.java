@@ -63,4 +63,9 @@ public class laptopPriceDetailController {
         return true;
     }
 
+    public static int getLaptopQtyByLaptopModelId(String laptopModelNo) throws SQLException {
+        laptopPriceDetailDaoImpl laptopPriceDetailDaoImpl = new laptopPriceDetailDaoImpl();
+        return laptopPriceDetailDaoImpl.getLaptopQtyById(laptopModelNo);
+    }
+
 }

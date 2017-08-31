@@ -24,7 +24,7 @@ public class laptopPriceDetailDaoImpl implements laptopPriceDetailDao {
     @Override
     public void addLaptopPriceDetail(laptopPriceDetail lapPriceDetail) throws SQLException {
         Connection con = DatabaseConnection2.getDatabaseConnection();
-        PreparedStatement ps = con.prepareStatement("INSERT INTO laptop_price_detail(laptop_price_detail_model_id, laptop_price_detail_buying_price, laptop_price_detail_selling_price, laptop_price_detail_min_selling_price, laptop_price_detail_status, laptop_price_detail_qty) VALUES (?,?,?,?,?,?)");
+        PreparedStatement ps = con.prepareStatement("INSERT INTO laptop_price_detail(laptop_price_detail_model_id, laptop_price_detail_buying_price, laptop_price_detail_selling_price, laptop_price_detail_min_selling_price, laptop_price_detail_status, laptop_price_detail_qty) VALUES (?,?,?,?,?,?) ON DUPLICATE KEY UPDATE laptop_price_detail_model_id=?, laptop_price_detail_buying_price=?, laptop_price_detail_selling_price=?, laptop_price_detail_min_selling_price=?, laptop_price_detail_status=?, laptop_price_detail_qty=?");
 
         ps.setString(1, lapPriceDetail.getLaptopPricedetailModelId());
         ps.setBigDecimal(2, lapPriceDetail.getLaptopPriceDetailBuyingPrice());
@@ -32,6 +32,13 @@ public class laptopPriceDetailDaoImpl implements laptopPriceDetailDao {
         ps.setBigDecimal(4, lapPriceDetail.getLaptopPriceDetailMinSellingPrice());
         ps.setInt(5, 1);
         ps.setInt(6, lapPriceDetail.getLaptopPriceDetailQty());
+
+        ps.setString(7, lapPriceDetail.getLaptopPricedetailModelId());
+        ps.setBigDecimal(8, lapPriceDetail.getLaptopPriceDetailBuyingPrice());
+        ps.setBigDecimal(9, lapPriceDetail.getLaptopPriceDetailSellingPrice());
+        ps.setBigDecimal(10, lapPriceDetail.getLaptopPriceDetailMinSellingPrice());
+        ps.setInt(11, 1);
+        ps.setInt(12, lapPriceDetail.getLaptopPriceDetailQty());
         ps.executeUpdate();
         ps.close();
 
@@ -59,4 +66,16 @@ public class laptopPriceDetailDaoImpl implements laptopPriceDetailDao {
         return commonDaoImpl.getResultByAttribute(selectQuery, attribute, condition, value);
     }
 
+    @Override
+    public int getLaptopQtyById(String laptopModelNo) throws SQLException {
+        int qty = 0;
+        Connection con = DatabaseConnection2.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement(selectQuery + "WHERE laptop_price_detail_model_id=?");
+        ps.setString(1, laptopModelNo);
+        ResultSet rset = ps.executeQuery();
+        while (rset.next()) {
+            qty = rset.getInt("laptop_price_detail_qty");
+        }
+        return qty;
+    }
 }

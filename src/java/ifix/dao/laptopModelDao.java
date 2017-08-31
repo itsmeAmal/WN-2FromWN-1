@@ -21,5 +21,8 @@ public interface laptopModelDao {
 
     ResultSet getAllLaptopModels() throws SQLException;
 
-    void deleteLaptopModel(int laptopModel) throws SQLException;
+    void deleteLaptopModel(int laptopModel) throws SQLException;  
+    
+    ResultSet getAllLaptopModelsDistincs()throws SQLException;
+    
 }

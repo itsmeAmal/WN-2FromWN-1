@@ -168,7 +168,7 @@
                 left: 25%;
                 width: 80%;
                 height: 30px;
-                top: 25%;
+                top: 35%;
                 color: #ffffff;
                 font-weight: 200;
                 font-family: serif;
@@ -178,7 +178,17 @@
                 left: 25%;
                 width: 80%;
                 height: 30px;
-                top: 30%;
+                top: 25%;
+                color: #ffffff;
+                font-weight: 200;
+                font-family: serif;
+            }
+            #addGrn{
+                position: absolute;
+                left: 25%;
+                width: 80%;
+                height: 30px;
+                top: 40%;
                 color: #ffffff;
                 font-weight: 200;
                 font-family: serif;
@@ -198,7 +208,8 @@
                 <div id="allUsers"> <a style="color: #ffffff;" href="usersAll.jsp">Users</a></div>
                 <div id="addProducts"> <a style="color: #ffffff;" href="laptopModelAdd.jsp">Laptop Model Add</a></div>
                 <div id="addUser"> <a style="color: #ffffff;" href="userAdd.jsp">User Add</a></div>
-                
+                <div id="addGrn"> <a style="color: #ffffff;" href="GRN.jsp">Goods Received Note</a></div>
+
             </div>
             <div id="divTopWhiteSpece">
                 <div id="divTopWhiteSpece_lblDashBoard">Dashboard   /</div>
