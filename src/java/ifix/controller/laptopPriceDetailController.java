@@ -6,7 +6,6 @@
 package ifix.controller;
 
 import ifix.core.Validations;
-import ifix.dao.Impl.commonDaoImpl;
 import ifix.dao.Impl.laptopPriceDetailDaoImpl;
 import ifix.model.laptopPriceDetail;
 import java.sql.SQLException;
@@ -17,15 +16,15 @@ import java.sql.SQLException;
  */
 public class laptopPriceDetailController {
 
-    public static boolean addLaptopPrice(String laptopPriceId, String laptopPriceLaptopId, String buyingPrice, String sellingPrice, String minSellingPrice, String status) throws SQLException {
-        if (Validations.isNotEmpty(laptopPriceId) && Validations.isNotEmpty(laptopPriceLaptopId) && Validations.isNotEmpty(buyingPrice) && Validations.isNotEmpty(sellingPrice)) {
+    public static boolean addLaptopPrice(String laptopPriceLaptopId, String buyingPrice, String sellingPrice, String minSellingPrice, String qty) throws SQLException {
+        if (Validations.isNotEmpty(laptopPriceLaptopId) && Validations.isNotEmpty(buyingPrice) && Validations.isNotEmpty(sellingPrice)) {
             laptopPriceDetailDaoImpl laptopPriceDetailDaoImpl = new laptopPriceDetailDaoImpl();
             laptopPriceDetail obj = new laptopPriceDetail();
-            obj.setLaptopPriceDetailId(Validations.getIntOrZeroFromString(laptopPriceId));
-            obj.setLaptopPricedetailModelId(Validations.getIntOrZeroFromString(laptopPriceLaptopId));
+            obj.setLaptopPricedetailModelId(laptopPriceLaptopId);
             obj.setLaptopPriceDetailBuyingPrice(Validations.getBigDecimalOrZeroFromString(buyingPrice));
             obj.setLaptopPriceDetailSellingPrice(Validations.getBigDecimalOrZeroFromString(sellingPrice));
             obj.setLaptopPriceDetailMinSellingPrice(Validations.getBigDecimalOrZeroFromString(minSellingPrice));
+            obj.setLaptopPriceDetailQty(Validations.getIntOrZeroFromString(qty));
             laptopPriceDetailDaoImpl.addLaptopPriceDetail(obj);
             return true;
         } else {
@@ -33,7 +32,7 @@ public class laptopPriceDetailController {
         }
     }
 
-    public static boolean updateLaptopPrice(String buyingPrice, String sellingPrice, String minSellingPrice, String status) throws SQLException {
+    public static boolean updateLaptopPrice(String buyingPrice, String sellingPrice, String minSellingPrice, String status, String qty) throws SQLException {
         if (Validations.isNotEmpty(buyingPrice) && Validations.isNotEmpty(sellingPrice) && Validations.isNotEmpty(minSellingPrice) && Validations.isNotEmpty(status)) {
             laptopPriceDetailDaoImpl laptopPriceDetailDaoImpl = new laptopPriceDetailDaoImpl();
             laptopPriceDetail laptopPriceDetail = new laptopPriceDetail();
@@ -41,6 +40,7 @@ public class laptopPriceDetailController {
             laptopPriceDetail.setLaptopPriceDetailBuyingPrice(Validations.getBigDecimalOrZeroFromString(buyingPrice));
             laptopPriceDetail.setLaptopPriceDetailMinSellingPrice(Validations.getBigDecimalOrZeroFromString(minSellingPrice));
             laptopPriceDetail.setLaptopPriceDetailStatus(Validations.getIntOrZeroFromString(status));
+            laptopPriceDetail.setLaptopPriceDetailQty(Validations.getIntOrZeroFromString(qty));
             return true;
         } else {
             return false;

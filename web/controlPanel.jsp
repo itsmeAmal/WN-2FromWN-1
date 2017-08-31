@@ -150,6 +150,8 @@
                 width: 80%;
                 height: 30px;
                 color: #ffffff;
+                font-size: 24px;
+                font-weight: 300;
             }
             #allUsers{
                 position: absolute;
@@ -157,6 +159,26 @@
                 width: 80%;
                 height: 30px;
                 top: 20%;
+                color: #ffffff;
+                font-weight: 200;
+                font-family: serif;
+            }
+            #addProducts{
+                position: absolute;
+                left: 25%;
+                width: 80%;
+                height: 30px;
+                top: 25%;
+                color: #ffffff;
+                font-weight: 200;
+                font-family: serif;
+            }
+            #addUser{
+                position: absolute;
+                left: 25%;
+                width: 80%;
+                height: 30px;
+                top: 30%;
                 color: #ffffff;
                 font-weight: 200;
                 font-family: serif;
@@ -173,7 +195,10 @@
             </div>
             <div id="divLeftBlackSpace">
                 <div id="divLeftBlackSpace_management">Management</div>
-                <div id="allUsers"> <a href="usersAll.jsp">All Users</a></div>
+                <div id="allUsers"> <a style="color: #ffffff;" href="usersAll.jsp">Users</a></div>
+                <div id="addProducts"> <a style="color: #ffffff;" href="laptopModelAdd.jsp">Laptop Model Add</a></div>
+                <div id="addUser"> <a style="color: #ffffff;" href="userAdd.jsp">User Add</a></div>
+                
             </div>
             <div id="divTopWhiteSpece">
                 <div id="divTopWhiteSpece_lblDashBoard">Dashboard   /</div>

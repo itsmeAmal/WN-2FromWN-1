@@ -19,18 +19,19 @@ import java.sql.SQLException;
  */
 public class laptopPriceDetailDaoImpl implements laptopPriceDetailDao {
 
-    private String selectQuery = "SELECT laptop_price_detail_id, laptop_price_detail_model_id, laptop_price_detail_buying_price, laptop_price_detail_selling_price, laptop_price_detail_min_selling_price, laptop_price_detail_status FROM laptop_price_detail";
+    private String selectQuery = "SELECT laptop_price_detail_id, laptop_price_detail_model_id, laptop_price_detail_buying_price, laptop_price_detail_selling_price, laptop_price_detail_min_selling_price, laptop_price_detail_status, laptop_price_detail_qty  FROM laptop_price_detail";
 
     @Override
     public void addLaptopPriceDetail(laptopPriceDetail lapPriceDetail) throws SQLException {
         Connection con = DatabaseConnection2.getDatabaseConnection();
-        PreparedStatement ps = con.prepareStatement("INSERT INTO laptop_price_detail(laptop_price_detail_id, laptop_price_detail_model_id, laptop_price_detail_buying_price, laptop_price_detail_selling_price, laptop_price_detail_min_selling_price, laptop_price_detail_status) VALUES (?,?,?,?,?,?)");
-        ps.setInt(1, lapPriceDetail.getLaptopPriceDetailId());
-        ps.setInt(2, lapPriceDetail.getLaptopPricedetailModelId());
-        ps.setBigDecimal(3, lapPriceDetail.getLaptopPriceDetailBuyingPrice());
-        ps.setBigDecimal(4, lapPriceDetail.getLaptopPriceDetailSellingPrice());
-        ps.setBigDecimal(5, lapPriceDetail.getLaptopPriceDetailMinSellingPrice());
-        ps.setInt(6, lapPriceDetail.getLaptopPriceDetailStatus());
+        PreparedStatement ps = con.prepareStatement("INSERT INTO laptop_price_detail(laptop_price_detail_model_id, laptop_price_detail_buying_price, laptop_price_detail_selling_price, laptop_price_detail_min_selling_price, laptop_price_detail_status, laptop_price_detail_qty) VALUES (?,?,?,?,?,?)");
+
+        ps.setString(1, lapPriceDetail.getLaptopPricedetailModelId());
+        ps.setBigDecimal(2, lapPriceDetail.getLaptopPriceDetailBuyingPrice());
+        ps.setBigDecimal(3, lapPriceDetail.getLaptopPriceDetailSellingPrice());
+        ps.setBigDecimal(4, lapPriceDetail.getLaptopPriceDetailMinSellingPrice());
+        ps.setInt(5, 1);
+        ps.setInt(6, lapPriceDetail.getLaptopPriceDetailQty());
         ps.executeUpdate();
         ps.close();
 

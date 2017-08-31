@@ -14,11 +14,12 @@ import java.math.BigDecimal;
 public class laptopPriceDetail {
 
     private int laptopPriceDetailId;
-    private int laptopPricedetailModelId;
+    private String laptopPricedetailModelId;
     private BigDecimal laptopPriceDetailBuyingPrice;
     private BigDecimal laptopPriceDetailSellingPrice;
     private BigDecimal laptopPriceDetailMinSellingPrice;
     private int laptopPriceDetailStatus;
+    private int laptopPriceDetailQty;
 
     /**
      * @return the laptopPriceDetailId
@@ -37,14 +38,14 @@ public class laptopPriceDetail {
     /**
      * @return the laptopPricedetailModelId
      */
-    public int getLaptopPricedetailModelId() {
+    public String getLaptopPricedetailModelId() {
         return laptopPricedetailModelId;
     }
 
     /**
      * @param laptopPricedetailModelId the laptopPricedetailModelId to set
      */
-    public void setLaptopPricedetailModelId(int laptopPricedetailModelId) {
+    public void setLaptopPricedetailModelId(String laptopPricedetailModelId) {
         this.laptopPricedetailModelId = laptopPricedetailModelId;
     }
 
@@ -102,5 +103,19 @@ public class laptopPriceDetail {
      */
     public void setLaptopPriceDetailStatus(int laptopPriceDetailStatus) {
         this.laptopPriceDetailStatus = laptopPriceDetailStatus;
+    }
+
+    /**
+     * @return the laptopPriceDetailQty
+     */
+    public int getLaptopPriceDetailQty() {
+        return laptopPriceDetailQty;
+    }
+
+    /**
+     * @param laptopPriceDetailQty the laptopPriceDetailQty to set
+     */
+    public void setLaptopPriceDetailQty(int laptopPriceDetailQty) {
+        this.laptopPriceDetailQty = laptopPriceDetailQty;
     }
 }
