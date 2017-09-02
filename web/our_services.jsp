@@ -28,7 +28,7 @@
                     Mobile Support 
                 </h1>
                 <br>
-                <div style="position: relative; left: -15%; top: 0%; width: 600px; height: 285px; background-image: url('service_img/22.png')"></div>
+                <div style="position: relative; left: -15%; top: 0%; width: 600px; height: 285px; background-image: url('com.official.cazzendra.images.ourservices/22.png')"></div>
             </div>           
         </div>
     </body>
