@@ -5,7 +5,6 @@
  */
 package ifix.controller;
 
-import ifix.model.LaptopModel;
 import ifix.model.laptopPriceDetail;
 import java.util.ArrayList;
 

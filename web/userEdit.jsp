@@ -102,30 +102,28 @@
             <%
                 HttpSession hs = request.getSession();
                 String userId = (String) hs.getAttribute("userId");
-
-                userController userController1 = new userController();
-                User user = userController1.getuserByUserId(userId);
+                User user = userController.getuserByUserId(userId);
 
             %>
 
 
 
             <div id="uname">
-                <input type="text" name="uname" placeholder="Name" class="form-control" value="<%= user.getUserName() %>" required />
+                <input type="text" name="uname" placeholder="Name" class="form-control" value="<%= user.getUserName()%>" required />
             </div> 
             <div id="address">
-                <input type="text" name="address" placeholder="Address" class="form-control" value="<%= user.getUserAddress() %>" required />
+                <input type="text" name="address" placeholder="Address" class="form-control" value="<%= user.getUserAddress()%>" required />
             </div>
             <div id="contact">
-                <input type="text" name="contact" placeholder="Contact" class="form-control" value="<%= user.getContact() %>" required />
+                <input type="text" name="contact" placeholder="Contact" class="form-control" value="<%= user.getContact()%>" required />
             </div>
 
             <div id="email">
-                <div class="form-control"> <%= user.getEmail() %></div> 
-                <input type="hidden" name="email" value="<%= user.getEmail() %>" />
+                <div class="form-control"> <%= user.getEmail()%></div> 
+                <input type="hidden" name="email" value="<%= user.getEmail()%>" />
             </div>
             <div id="pw">
-                <input type="text" name="password" placeholder="Password" class="form-control" value="<%= user.getPassword() %>" required />
+                <input type="text" name="password" placeholder="Password" class="form-control" value="<%= user.getPassword()%>" required />
             </div>
 
             <div id="agreement">
@@ -136,9 +134,9 @@
             <div id="btn_2">
                 <input type="Submit" value="Update" class="form-control" style="color: #ffffff; background-color: #0099ff; alignment-adjust: middle; "  />
             </div>
-            
-            
-            
+
+
+
         </div>
 
     </form>

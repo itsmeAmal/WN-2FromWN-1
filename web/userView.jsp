@@ -97,10 +97,10 @@
     <body style="background-color: #000000;">
         <form action="userViewRedirectToUserEdit" method="post">
             <%
-                String userId = "20";
-                User user = userController.getuserByUserId(userId);
                 HttpSession hs = request.getSession();
-                hs.setAttribute("userId", userId);
+                String userId = (String) hs.getAttribute("userId");
+                User user = userController.getuserByUserId(userId);
+                
             %>
 
             <div style="position: absolute; left: 20%; width: 60%; top: 5%; height: 85%; background-color: #ffffff;" />

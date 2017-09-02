@@ -63,4 +63,10 @@ public class userController {
         return useDaoImpl.getAllUsers();
     }
 
+    public static User getFirstUserByName(String userName) throws SQLException {
+        userDaoImpl userImpl = new userDaoImpl();
+        User user = userImpl.getUserByName(userName);
+        return user;
+    }
+
 }

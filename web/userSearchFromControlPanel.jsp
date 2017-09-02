@@ -27,18 +27,12 @@
 
     </head>
     <body>
-        <form action="">
-            
-        </form>
-        <div style="position: absolute; left: 0px; width: 100%; top: 0px; height: 100%; background-color: #000000;">
-            <div style="position: absolute; left: 10%; width: 80%; top: 10%; height: 80%; background-color: #ffffff;">
-                <div id="logo"></div>
-                <div style="position: absolute; left: 30%; width: 250px; top: 35%; height: 30px;"><input class="form-control" type="text" name="uname" placeholder="Search by user's Name"/>  </div>
-                <div style="position: absolute; left: 53%; width: 150px; top: 35%; height: 30px;"><input type="submit" name="btn-1" value="Search" class="btn btn-info" style="width: 100px;"/> </div>
-            
-            </div>
 
-        </div>
+        <form action="userSearchFromControlPanel">
+            <div id="logo"></div>
+            <div style="position: absolute; left: 33%; width: 250px; top: 44%; height: 30px;"><input class="form-control" type="text" name="uname" placeholder="Search by user's Name"/>  </div>
+            <div style="position: absolute; left: 56%; width: 150px; top: 44%; height: 30px;"><input type="submit" name="btn-1" value="Search" class="btn btn-info" style="width: 100px;"/> </div>
 
+        </form> 
     </body>
 </html>
