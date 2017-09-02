@@ -13,11 +13,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>products</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="com.official.cazzendra.css.common/bootstrap.min.css">
     </head>
     <body>
         <div style="position: absolute; left: 0px; width: 100%; height: 100%; top: 0px;">
-            <div style="position: absolute; left: 20%; top: 1%; width: 350px; height: 150px; background-image: url('com.official.cazzendra.logos/userslogo.png');"></div>
+            <div style="position: absolute; left: 20%; top: 1%; width: 350px; height: 150px; background-image: url('com.official.cazzendra.images.logos/userslogo.png');"></div>
 
             <hr/>
             <%

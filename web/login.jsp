@@ -17,7 +17,7 @@
                 window.location.hash = "no-back-button";
             }
         </script>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="com.official.cazzendra.css.common/bootstrap.min.css">
         <style>
             #background_color{
                 position: absolute;

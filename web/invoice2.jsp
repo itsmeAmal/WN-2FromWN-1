@@ -15,12 +15,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Invoice</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="com.official.cazzendra.css.common/bootstrap.min.css">
     </head>
     <body>
         <div style="position: absolute; left: 20%; top: 10%; width: 60%; height: 80%; border-style: ridge;">
             
-            <div style="position: absolute; left: 10%; top: 10%; width: 107px; height: 15px; background-image: url('com.official.cazzendra.logos/4.png')"  ></div>
+            <div style="position: absolute; left: 10%; top: 10%; width: 107px; height: 15px; background-image: url('com.official.cazzendra.images.logos/4.png')"  ></div>
             <div style="position: absolute; left: 10%; top: 15%; width: 107px; height: 15px;">Date :</div>
             <div style="position: absolute; left: 80%; top: 20%; width: 107px; height: 15px;">Invoice # :</div>    
             <%

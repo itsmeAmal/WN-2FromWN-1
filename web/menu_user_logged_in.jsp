@@ -20,7 +20,7 @@
                 window.location.hash = "no-back-button";
             }
         </script>
-        <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+        <link rel="stylesheet" href="com.official.cazzendra.css.common/style.css" type="text/css" media="all">
     </head>
     <body>
         <div class="example">

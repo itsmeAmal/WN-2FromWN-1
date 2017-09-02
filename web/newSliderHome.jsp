@@ -262,7 +262,7 @@
             }
 
         </style>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="com.official.cazzendra.css.common/bootstrap.min.css">
         <link rel="stylesheet" href="style.css">
         <%-- javascript image slider--%>
         <link href="themes/3/js-image-slider.css" rel="stylesheet" type="text/css" />

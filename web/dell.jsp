@@ -53,7 +53,7 @@
                 top: 120px;
                 width: 200px;
                 height: 100px;
-                background-image: url("com.official.cazzendra.logos/buy.png");
+                background-image: url("com.official.cazzendra.images.logos/buy.png");
             }
             #qty_1{
                 position: absolute;
@@ -68,7 +68,7 @@
                 width: 320px;
                 height: 67px;
                 top: 60%;
-                background-image: url("com.official.cazzendra.logos/3.png");
+                background-image: url("com.official.cazzendra.images.logos/3.png");
             }
             #backtohomelink{
                 position: absolute;

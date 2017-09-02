@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Add Laptop Model | ifix</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="com.official.cazzendra.css.common/bootstrap.min.css">
         <style>
             #logo{
                 position: absolute;
@@ -18,7 +18,7 @@
                 width: 322px;
                 height: 67px;
                 top: 10%;
-                background-image: url("com.official.cazzendra.logos/3.png");
+                background-image: url("com.official.cazzendra.images.logos/3.png");
             }
             #outerDiv{
                 position: absolute;

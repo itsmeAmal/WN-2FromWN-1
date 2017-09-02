@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Pay Online</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="com.official.cazzendra.css.common/bootstrap.min.css">
         <script type="text/javascript">
             window.location.hash = "no-back-button";
             window.location.hash = "Again-No-back-button";//again because google chrome don't insert first hash into history
@@ -44,7 +44,7 @@
                 width: 187px;
                 height: 40px;
                 top: 50px;
-                background-image: url("credit/1.png");
+                background-image: url("com.official.cazzendra.images.paymentgateway/1.png");
             }
             #name_on_card{
                 position: absolute;

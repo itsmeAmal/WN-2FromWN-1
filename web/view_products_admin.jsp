@@ -11,11 +11,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>products</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="com.official.cazzendra.css.common/bootstrap.min.css">
     </head>
     <body>
         <div style="position: absolute; left: 0px; width: 100%; height: 100%; top: 0px;">
-            <div style="position: absolute; left: 20%; top: 5%; width: 300px; height: 100px; background-image: url('com.official.cazzendra.logos/products.png');"></div>
+            <div style="position: absolute; left: 20%; top: 5%; width: 300px; height: 100px; background-image: url('com.official.cazzendra.images.logos/products.png');"></div>
 
             <hr/>
 

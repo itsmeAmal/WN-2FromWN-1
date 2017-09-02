@@ -69,7 +69,7 @@
                 width: 320px;
                 height: 67px;
                 top: 5%;
-                background-image: url("com.official.cazzendra.logos/3.png");
+                background-image: url("com.official.cazzendra.images.logos/3.png");
             }
             #cart_logo{
                 position: absolute;

@@ -18,7 +18,7 @@
                 window.location.hash = "no-back-button";
             };
         </script>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="com.official.cazzendra.css.common/bootstrap.min.css">
         <style>
 
             #uname{
@@ -88,7 +88,7 @@
                 width: 322px;
                 height: 67px;
                 top: 10%;
-                background-image: url("com.official.cazzendra.logos/3.png");
+                background-image: url("com.official.cazzendra.images.logos/3.png");
             }
 
 

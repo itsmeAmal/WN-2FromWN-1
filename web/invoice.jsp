@@ -12,14 +12,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Invoice</title>
 
-        <link rel="stylesheet" href="css/bootstrap.min.css"/>      
+        <link rel="stylesheet" href="com.official.cazzendra.css.common/bootstrap.min.css"/>      
     </head>
     <body>
         
         <a href="index.jsp" style="position: absolute; left: 10%; top: 10%; width: 100px; "  >Home</a>
         
         <div style="position: absolute; left: 20%; width: 60%; top: 10%; height: 500px; border-style: groove; ">
-            <div style="position: absolute; left: 20px; top: 10px; width: 320px; height: 67px; background-image: url('com.official.cazzendra.logos/3.png');"></div>
+            <div style="position: absolute; left: 20px; top: 10px; width: 320px; height: 67px; background-image: url('com.official.cazzendra.images.logos/3.png');"></div>
             <div style="position: absolute; left: 10%; top: 130px; width: 400px; height: 50px; font-family: serif; font-size: 16px;">** This is an automatically generated invoice</div>
             <div style="position: absolute; left: 0%; top: 110px; width: 100%; height: 1px; background-color: #000000;"></div>
             <!--<div style="position: absolute; left: 0%; top: 560px; width: 100%; height: 5px; background-color: #999999;"></div>-->

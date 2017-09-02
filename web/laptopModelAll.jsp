@@ -22,10 +22,10 @@
                 width: 322px;
                 height: 67px;
                 top: 10%;
-                background-image: url("com.official.cazzendra.logos/3.png");
+                background-image: url("com.official.cazzendra.images.logos/3.png");
             }
         </style>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="com.official.cazzendra.css.common/bootstrap.min.css">
     </head>
     <body>
         <div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; background-color: #000000;">
