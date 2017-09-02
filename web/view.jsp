@@ -1,10 +1,5 @@
 
 
-<%@page import="java.util.List"%>
-<%@page import="org.hibernate.Criteria"%>
-<%@page import="org.hibernate.Transaction"%>
-<%@page import="org.hibernate.Session"%>
-<%@page import="org.hibernate.SessionFactory"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>

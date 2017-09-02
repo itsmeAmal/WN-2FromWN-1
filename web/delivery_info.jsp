@@ -50,28 +50,14 @@
 
 
 
-                    <%
-                        Session ses = conn.connector.getSessionFactory().openSession();
-                        Criteria cr = ses.createCriteria(pojos.PaymentHistory.class);
-                        List<pojos.PaymentHistory> lst = cr.list();
-                        if (lst.size() > 0) {
-                            for (pojos.PaymentHistory lh : lst) {
-
-                    %>
 
                     <form method="POST" action="update_dlvr" >
                         <tr class="table-condensed">
                             
-                            <td><%= lh.getCustName() %></td>
-                            <td><%= lh.getAdd1() %></td>
-                            <td><%= lh.getAdd2() %></td>
-                            <td><%= lh.getCity() %></td>
-                           
-                            <td><%= lh.getPaidAmount() %></td>
-                            <td><%= lh.getStatus() %></td>
+                          
                             <td>
                                 <input class="btn btn-danger"  type="submit" name="btn-33" value="Deliver"/>
-                                <input type="hidden" name="btn3" value="<%= lh.getId() %>"/>
+                                <input type="hidden" name="btn3" value=""/>
                            </td>
                            
                            
@@ -79,11 +65,7 @@
                             
                         </tr>
                     </form>
-                    <%                                                out.write("</tr>");
-                            }
-
-                        }
-                    %>
+                  
 
                 </table>
             </div>
