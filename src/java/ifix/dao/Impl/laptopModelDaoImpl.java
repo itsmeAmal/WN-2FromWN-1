@@ -86,4 +86,9 @@ public class laptopModelDaoImpl implements laptopModelDao {
     public ResultSet getAllLaptopModelsDistincs() throws SQLException {
         return new commonDaoImpl().getAllRecords("SELECT DISTINCT laptop_model_laptop_id FROM laptop_model");
     }
+
+    @Override
+    public LaptopModel getLaptopModelById(String laptopModelId) throws SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
