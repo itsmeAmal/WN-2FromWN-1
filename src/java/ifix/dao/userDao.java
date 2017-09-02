@@ -28,4 +28,6 @@ public interface userDao {
     int getNextUserId()throws SQLException;
     
     ResultSet getUsersByOneAttribute(String attribute, String condition, String value)throws SQLException; 
+    
+    User getUserByName(String userName)throws SQLException;
 }

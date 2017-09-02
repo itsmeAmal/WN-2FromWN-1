@@ -101,4 +101,11 @@ public class userDaoImpl implements userDao {
         return new commonDaoImpl().getResultByAttribute(selectQuery, attribute, condition, value);
 
     }
+
+    @Override
+    public User getUserByName(String userName) throws SQLException {
+        ResultSet rset = getUsersByOneAttribute("user_name", " LIKE ", userName);
+        User user = getFirstUserFromResultset(rset);
+        return user;
+    }
 }
