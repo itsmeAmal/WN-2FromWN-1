@@ -25,6 +25,13 @@
 
     </head>
     <body>
-        <div style="position: absolute; left: 0px; width: 100%; top: 0px; height: 100%; background-color: #000000;"></div>
+        <div style="position: absolute; left: 0px; width: 100%; top: 0px; height: 100%; background-color: #000000;">
+            <div style="position: absolute; left: 10%; width: 80%; top: 10%; height: 80%; background-color: #ffffff;">
+                <div id="logo"></div>
+                
+            </div>
+            
+        </div>
+        
     </body>
 </html>
