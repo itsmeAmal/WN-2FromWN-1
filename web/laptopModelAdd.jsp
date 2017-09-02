@@ -29,7 +29,6 @@
                 background-color: #000000;
             }
         </style>
-
     </head>
     <body>
         <form action="fileupload" method="POST" enctype="multipart/form-data">
@@ -44,15 +43,11 @@
                     <div style="position: absolute; left: 10%; top: 65%; width: 250px; height: 30px;"> <input type="text" class="form-control" name="usbType1" placeholder="USB Type 1" required/></div>
                     <div style="position: absolute; left: 10%; top: 73%; width: 250px; height: 30px;"> <input type="text" class="form-control" name="usbType2" placeholder="USB Type 2" required/></div>
                     <div style="position: absolute; left: 10%; top: 81%; width: 250px; height: 30px;"> <input type="text" class="form-control" name="hdmi" placeholder="HDMI Output" required/></div>
-
                     <div style="position: absolute; left: 50%; top: 25%; width: 250px; height: 30px;"> <input type="text" class="form-control" name="vgaOp" placeholder="VGA Output" required/></div>
                     <div style="position: absolute; left: 50%; top: 33%; width: 250px; height: 30px;"> <input type="text" class="form-control" name="screenSize" placeholder="Screen Size" required/></div>
                     <div style="position: absolute; left: 50%; top: 41%; width: 250px; height: 30px;"> <input type="text" class="form-control" name="cache" placeholder="Cache Memory" required/></div>
                     <div style="position: absolute; left: 50%; top: 49%; width: 250px; height: 30px;"> <input type="file" name="imagePath" multiple="true" class="form-control"></div>
-
                     <div style="position: absolute; left: 50%; top: 57%; width: 250px; height: 30px;"> <input type="submit" class="btn btn-info" name="btn" value="Save Laptop Model"/></div>
-
-
                 </div>
             </div>
         </form>
