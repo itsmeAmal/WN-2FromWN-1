@@ -27,9 +27,9 @@
         </style>
         <link rel="stylesheet" href="com.official.cazzendra.css.common/bootstrap.min.css">
     </head>
-    <body>
-        <div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; background-color: #000000;">
-            <div style="position: absolute; left: 10%; width: 80%; top: 5%; height: 90%; background-color: #ffffff;"></div>  
+    <body style="background-color: #000000;">
+        <div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;">
+            <div style="position: absolute; left: 10%; width: 80%; top: 5%; height: 100%;"></div>  
             <div id="logo"></div>
             <%
                 SessionFactory sf = ifix.hib.connection.connector.getSessionFactory();
@@ -38,14 +38,21 @@
                 pojos.LaptopModel laptopModels = new pojos.LaptopModel();
                 Criteria cr = ses.createCriteria(pojos.LaptopModel.class);
                 List<pojos.LaptopModel> li = cr.list();
-
+                                
                 for (pojos.LaptopModel laps : li) {
             %>
-            <div style="position: absolute; left: 30%; width: 250px; height: 250px; top: 30%;"><img src="<%= laps.getLaptopModelImagePath()  %>"></div>
-            <div style="position: absolute; left: 30%; width: 250px; height: 40px; top: 60%; font-family: inherit; font-weight: 400; font-size: 20px;"><%= laps.getLaptopModelLaptopId() %></div>
-            <div style="position: absolute; left: 30%; width: 250px; height: 40px; top: 65%;"><%= laps.getLaptopModelProcessor() %></div>
-
-
+            <div style="position: relative; left: 20%; width: 60%; top: 30%; height: 300px; background-color: #ffffff; padding-top: 100px;">
+                <div style="position: absolute; left: 5%; width: 250px; height: 250px; top: 10%;"><img src="<%= laps.getLaptopModelImagePath()%>"></div>
+                <div style="position: absolute; left: 38%; width: 250px; height: 40px; top: 15%; font-family: inherit; font-weight: 400; font-size: 20px;"><%= laps.getLaptopModelLaptopId()%></div>
+                <div style="position: absolute; left: 38%; width: 250px; height: 40px; top: 25%;"><%= laps.getLaptopModelProcessor()%></div>
+                <%
+                
+                
+                
+                
+                %>
+                <div style="position: relative; left: 0%; top: 98%; width: 100%; height: 5px; background-color: #000000; padding-bottom: 0px;" ></div>
+            </div>
             <%
                 }
             %>
