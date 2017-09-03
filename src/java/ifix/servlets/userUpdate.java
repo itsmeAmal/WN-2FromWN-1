@@ -51,7 +51,7 @@ public class userUpdate extends HttpServlet {
             if (state) {
                 hs.removeAttribute("userId");
             }
-            response.sendRedirect("userView.jsp");
+            response.sendRedirect("userAdd.jsp");
         } catch (SQLException e) {
         }
     }

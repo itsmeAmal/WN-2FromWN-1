@@ -50,7 +50,7 @@ public class userSearchFromControlPanel extends HttpServlet {
                 response.sendRedirect("userView.jsp");
 
             } else {
-                System.out.println("brrrrrrr");
+                response.sendRedirect("errorNoRecordFound.jsp"); 
             }
         } catch (SQLException e) {
         }

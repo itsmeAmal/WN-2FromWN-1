@@ -193,6 +193,17 @@
                 font-weight: 200;
                 font-family: serif;
             }
+            #searchUser{
+                position: absolute;
+                left: 25%;
+                width: 80%;
+                height: 30px;
+                top: 45%;
+                color: #ffffff;
+                font-weight: 200;
+                font-family: serif;
+
+            }
         </style>
     </head>
     <body>
@@ -209,6 +220,7 @@
                 <div id="addProducts"> <a style="color: #ffffff;" href="laptopModelAdd.jsp">Laptop Model Add</a></div>
                 <div id="addUser"> <a style="color: #ffffff;" href="userAdd.jsp">User Add</a></div>
                 <div id="addGrn"> <a style="color: #ffffff;" href="GRN.jsp">Goods Received Note</a></div>
+                <div id="searchUser"> <a style="color: #ffffff;" href="userSearchFromControlPanel.jsp">User Search</a> </div>
 
             </div>
             <div id="divTopWhiteSpece">

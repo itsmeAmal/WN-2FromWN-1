@@ -20,6 +20,16 @@
                 top: 10%;
                 background-image: url("com.official.cazzendra.images.logos/3.png");
             }
+            @font-face {
+                font-family: 'Ubuntu';
+                src: local('Ubuntu'), url('com.official.cazzendra.fonts/Ubuntu-Light.ttf') format('truetype');
+                font-weight: 300;
+                font-style: normal;
+
+            }
+           
+
+
         </style>
         <link rel="stylesheet" href="com.official.cazzendra.css.common/bootstrap.min.css">
 
@@ -28,12 +38,12 @@
         <div style="position: absolute; left: 0px; width: 100%; top: 0px; height: 100%; background-color: #000000;">
             <div style="position: absolute; left: 10%; width: 80%; top: 10%; height: 80%; background-color: #ffffff;">
                 <div id="logo"></div>
-                <div style="font-family: arial">
-                    
+                <div style="position: absolute; left: 35%; width: 40%; top: 35%; height: 30%;">
+                    <h1>No records found...!</h1>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </body>
 </html>
