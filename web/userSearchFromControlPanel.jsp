@@ -21,18 +21,15 @@
                 top: 10%;
                 background-image: url("com.official.cazzendra.images.logos/3.png");
             }
-
         </style>
         <link rel="stylesheet" href="com.official.cazzendra.css.common/bootstrap.min.css">
 
     </head>
     <body>
-
         <form action="userSearchFromControlPanel">
             <div id="logo"></div>
             <div style="position: absolute; left: 33%; width: 250px; top: 44%; height: 30px;"><input class="form-control" type="text" name="uname" placeholder="Search by user's Name"/>  </div>
-            <div style="position: absolute; left: 56%; width: 150px; top: 44%; height: 30px;"><input type="submit" name="btn-1" value="Search" class="btn btn-info" style="width: 100px;"/> </div>
-
+            <div style="position: absolute; left: 52%; width: 150px; top: 44%; height: 30px;"><input type="submit" name="btn-1" value="Search" class="btn btn-info" style="width: 100px;"/> </div>
         </form> 
     </body>
 </html>

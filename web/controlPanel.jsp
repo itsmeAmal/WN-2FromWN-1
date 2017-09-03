@@ -168,7 +168,7 @@
                 left: 25%;
                 width: 80%;
                 height: 30px;
-                top: 35%;
+                top: 45%;
                 color: #ffffff;
                 font-weight: 200;
                 font-family: serif;
@@ -188,7 +188,7 @@
                 left: 25%;
                 width: 80%;
                 height: 30px;
-                top: 40%;
+                top: 50%;
                 color: #ffffff;
                 font-weight: 200;
                 font-family: serif;
@@ -198,11 +198,10 @@
                 left: 25%;
                 width: 80%;
                 height: 30px;
-                top: 45%;
+                top: 30%;
                 color: #ffffff;
                 font-weight: 200;
                 font-family: serif;
-
             }
         </style>
     </head>
