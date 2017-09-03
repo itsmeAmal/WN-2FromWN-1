@@ -24,5 +24,9 @@ public interface laptopPriceDetailDao {
     ResultSet getLaptopPriceDetailByOneAttribute(String attribute, String condition, String value) throws SQLException;
     
     int getLaptopQtyById(String laptopModelNo)throws SQLException;
+    
+    laptopPriceDetail getLaptopPriceDetailByModelId(String laptopModelId)throws SQLException;
+    
+    laptopPriceDetail getFirstLaptopPriceDetail(ResultSet rset)throws SQLException;
 
 }

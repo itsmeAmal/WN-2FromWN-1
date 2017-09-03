@@ -4,6 +4,9 @@
     Author     : 4m4l
 --%>
 
+<%@page import="ifix.controller.laptopPriceDetailController"%>
+<%@page import="ifix.dao.Impl.laptopPriceDetailDaoImpl"%>
+<%@page import="ifix.model.laptopPriceDetail"%>
 <%@page import="java.util.List"%>
 <%@page import="org.hibernate.Criteria"%>
 <%@page import="org.hibernate.Transaction"%>
@@ -38,7 +41,8 @@
                 pojos.LaptopModel laptopModels = new pojos.LaptopModel();
                 Criteria cr = ses.createCriteria(pojos.LaptopModel.class);
                 List<pojos.LaptopModel> li = cr.list();
-                                
+                //------------------------------------
+
                 for (pojos.LaptopModel laps : li) {
             %>
             <div style="position: relative; left: 20%; width: 60%; top: 30%; height: 300px; background-color: #ffffff; padding-top: 100px;">
@@ -46,11 +50,11 @@
                 <div style="position: absolute; left: 38%; width: 250px; height: 40px; top: 15%; font-family: inherit; font-weight: 400; font-size: 20px;"><%= laps.getLaptopModelLaptopId()%></div>
                 <div style="position: absolute; left: 38%; width: 250px; height: 40px; top: 25%;"><%= laps.getLaptopModelProcessor()%></div>
                 <%
-                
-                
-                
-                
+                    laptopPriceDetail lapPriceDetail = laptopPriceDetailController.getLaptopPriceDetailByLaptopModelId(String.valueOf(laps.getLaptopModelLaptopId()));
                 %>
+                <div style="position: absolute; left: 38%; top: 35%; width: 250px; height: 40px;"> <%= lapPriceDetail.getLaptopPriceDetailSellingPrice()%> </div>
+
+
                 <div style="position: relative; left: 0%; top: 98%; width: 100%; height: 5px; background-color: #000000; padding-bottom: 0px;" ></div>
             </div>
             <%

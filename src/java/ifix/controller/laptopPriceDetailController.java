@@ -67,5 +67,12 @@ public class laptopPriceDetailController {
         laptopPriceDetailDaoImpl laptopPriceDetailDaoImpl = new laptopPriceDetailDaoImpl();
         return laptopPriceDetailDaoImpl.getLaptopQtyById(laptopModelNo);
     }
+    
+    public static laptopPriceDetail getLaptopPriceDetailByLaptopModelId(String laptopModelId)throws SQLException{
+    laptopPriceDetailDaoImpl lapDetailDaoImpl = new laptopPriceDetailDaoImpl();
+    laptopPriceDetail lapPriceDetail = lapDetailDaoImpl.getLaptopPriceDetailByModelId(laptopModelId);
+    return lapPriceDetail;
+    }
+    
 
 }

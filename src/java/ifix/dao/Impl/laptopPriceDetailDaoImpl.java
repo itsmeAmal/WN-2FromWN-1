@@ -78,4 +78,27 @@ public class laptopPriceDetailDaoImpl implements laptopPriceDetailDao {
         }
         return qty;
     }
+
+    @Override
+    public laptopPriceDetail getLaptopPriceDetailByModelId(String laptopModelId) throws SQLException {
+        ResultSet rset = getLaptopPriceDetailByOneAttribute("laptop_price_detail_model_id", " LIKE ", laptopModelId);
+        laptopPriceDetail lapPriceDetail = getFirstLaptopPriceDetail(rset);
+        return lapPriceDetail;
+    }
+
+    @Override
+    public laptopPriceDetail getFirstLaptopPriceDetail(ResultSet rset) throws SQLException {
+        laptopPriceDetail laptopPriceDetail1 = null;
+        while (rset.next()) {
+            laptopPriceDetail1 = new laptopPriceDetail();
+            laptopPriceDetail1.setLaptopPriceDetailId(rset.getInt("laptop_price_detail_id"));
+            laptopPriceDetail1.setLaptopPricedetailModelId(rset.getString("laptop_price_detail_model_id"));
+            laptopPriceDetail1.setLaptopPriceDetailBuyingPrice(rset.getBigDecimal("laptop_price_detail_buying_price"));
+            laptopPriceDetail1.setLaptopPriceDetailSellingPrice(rset.getBigDecimal("laptop_price_detail_selling_price"));
+            laptopPriceDetail1.setLaptopPriceDetailMinSellingPrice(rset.getBigDecimal("laptop_price_detail_min_selling_price"));
+            laptopPriceDetail1.setLaptopPriceDetailStatus(rset.getInt("laptop_price_detail_status"));
+            laptopPriceDetail1.setLaptopPriceDetailQty(rset.getInt("laptop_price_detail_qty"));
+        }
+        return laptopPriceDetail1;
+    }
 }
