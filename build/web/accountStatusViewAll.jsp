@@ -62,24 +62,26 @@
             <%
                 accountStatusController acStatusController = new accountStatusController();
                 ResultSet rset = acStatusController.getAllRecords();
-
             %>
             <div style="position: absolute; left: 10%; width: 80%; top: 30%; height: content-box; background-color: #ffffff;">
                 <table id="accounts">
+                    <th>Date</th>
                     <th>Product As Invoice</th>
                     <th>Quantity</th>
                     <th>Unit Price</th>
                     <th>Expense</th>
                     <th>Income</th>
+                    
 
                     <% while (rset.next()) {%>
 
                     <tr class="colomn-purp">
-                        <td><%= rset.getString(1)%> </td>
-                        <td><%= rset.getInt(2)%> </td>
-                        <td><%= rset.getBigDecimal(3)%> </td>
+                        <td><%= rset.getDate(1) %></td>
+                        <td><%= rset.getString(2)%> </td>
+                        <td><%= rset.getInt(3)%> </td>
                         <td><%= rset.getBigDecimal(4)%> </td>
                         <td><%= rset.getBigDecimal(5)%> </td>
+                        <td><%= rset.getBigDecimal(6)%> </td>
                     </tr>
                     <%
                         }

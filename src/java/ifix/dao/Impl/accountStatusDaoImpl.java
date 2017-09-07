@@ -15,7 +15,7 @@ import java.sql.SQLException;
  */
 public class accountStatusDaoImpl implements accountStatusViewDao{
 
-    private String selectQuery = "select account_status_invoice, account_status_qty, account_status_unit_price, account_status_out, account_status_in from  account_status";
+    private String selectQuery = "select Date, account_status_invoice, account_status_qty, account_status_unit_price, account_status_out, account_status_in from  account_status";
     
     @Override
     public ResultSet getAllAccountStatus() throws SQLException {

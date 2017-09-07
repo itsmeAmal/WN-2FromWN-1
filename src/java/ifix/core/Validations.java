@@ -80,5 +80,9 @@ public class Validations {
             return false;
         }
     }
+     public static java.sql.Date getCurrentJavaSqlDate() {
+        java.util.Date today = new java.util.Date();
+        return new java.sql.Date(today.getTime());
+    }
 
 }

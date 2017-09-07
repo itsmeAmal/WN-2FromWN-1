@@ -6,6 +6,7 @@
 package ifix.dao.Impl;
 
 import ifix.connection.DatabaseConnection2;
+import ifix.core.Validations;
 import ifix.dao.laptopPriceDetailDao;
 import ifix.model.laptopPriceDetail;
 import java.sql.Connection;
@@ -24,7 +25,7 @@ public class laptopPriceDetailDaoImpl implements laptopPriceDetailDao {
     @Override
     public void addLaptopPriceDetail(laptopPriceDetail lapPriceDetail) throws SQLException {
         Connection con = DatabaseConnection2.getDatabaseConnection();
-        PreparedStatement ps = con.prepareStatement("INSERT INTO laptop_price_detail(laptop_price_detail_model_id, laptop_price_detail_buying_price, laptop_price_detail_selling_price, laptop_price_detail_min_selling_price, laptop_price_detail_status, laptop_price_detail_qty) VALUES (?,?,?,?,?,?) ON DUPLICATE KEY UPDATE laptop_price_detail_model_id=?, laptop_price_detail_buying_price=?, laptop_price_detail_selling_price=?, laptop_price_detail_min_selling_price=?, laptop_price_detail_status=?, laptop_price_detail_qty=?");
+        PreparedStatement ps = con.prepareStatement("INSERT INTO laptop_price_detail(laptop_price_detail_model_id, laptop_price_detail_buying_price, laptop_price_detail_selling_price, laptop_price_detail_min_selling_price, laptop_price_detail_status, laptop_price_detail_qty, laptop_price_detail_date) VALUES (?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE laptop_price_detail_model_id=?, laptop_price_detail_buying_price=?, laptop_price_detail_selling_price=?, laptop_price_detail_min_selling_price=?, laptop_price_detail_status=?, laptop_price_detail_qty=?, laptop_price_detail_date=?");
 
         ps.setString(1, lapPriceDetail.getLaptopPricedetailModelId());
         ps.setBigDecimal(2, lapPriceDetail.getLaptopPriceDetailBuyingPrice());
@@ -32,13 +33,15 @@ public class laptopPriceDetailDaoImpl implements laptopPriceDetailDao {
         ps.setBigDecimal(4, lapPriceDetail.getLaptopPriceDetailMinSellingPrice());
         ps.setInt(5, 1);
         ps.setInt(6, lapPriceDetail.getLaptopPriceDetailQty());
+        ps.setDate(7, Validations.getCurrentJavaSqlDate());
 
-        ps.setString(7, lapPriceDetail.getLaptopPricedetailModelId());
-        ps.setBigDecimal(8, lapPriceDetail.getLaptopPriceDetailBuyingPrice());
-        ps.setBigDecimal(9, lapPriceDetail.getLaptopPriceDetailSellingPrice());
-        ps.setBigDecimal(10, lapPriceDetail.getLaptopPriceDetailMinSellingPrice());
-        ps.setInt(11, 1);
-        ps.setInt(12, lapPriceDetail.getLaptopPriceDetailQty());
+        ps.setString(8, lapPriceDetail.getLaptopPricedetailModelId());
+        ps.setBigDecimal(9, lapPriceDetail.getLaptopPriceDetailBuyingPrice());
+        ps.setBigDecimal(10, lapPriceDetail.getLaptopPriceDetailSellingPrice());
+        ps.setBigDecimal(11, lapPriceDetail.getLaptopPriceDetailMinSellingPrice());
+        ps.setInt(12, 1);
+        ps.setInt(13, lapPriceDetail.getLaptopPriceDetailQty());
+        ps.setDate(14, Validations.getCurrentJavaSqlDate());
         ps.executeUpdate();
         ps.close();
 
@@ -98,7 +101,7 @@ public class laptopPriceDetailDaoImpl implements laptopPriceDetailDao {
             laptopPriceDetail1.setLaptopPriceDetailMinSellingPrice(rset.getBigDecimal("laptop_price_detail_min_selling_price"));
             laptopPriceDetail1.setLaptopPriceDetailStatus(rset.getInt("laptop_price_detail_status"));
             laptopPriceDetail1.setLaptopPriceDetailQty(rset.getInt("laptop_price_detail_qty"));
-            laptopPriceDetail1.setLaptopPriceDetailDate(rset.getDate("laptop_price_detail_date")); 
+            laptopPriceDetail1.setLaptopPriceDetailDate(rset.getDate("laptop_price_detail_date"));   
         }
         return laptopPriceDetail1;
     }
