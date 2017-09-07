@@ -4,6 +4,7 @@
     Author     : 4m4l
 --%>
 
+<%@page import="ifix.controller.userController"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -50,6 +51,22 @@
                 width: 19%;
                 height: 9%;
                 background-color: #cc66ff;
+            }
+            #divMenuBox1_infoBox{
+                position: absolute;
+                top: 23%;
+                width: 19%;
+                height: 18%;
+                left: 17%;
+                background-color: #660066;
+                color: #ffffff;
+                font-size: 40px;
+            }
+            #divMenuBox1_infoBox_value{
+                position: relative;
+                left: 40%;
+                top: 35%;
+
             }
             #divMenuBox2{
                 position: absolute;
@@ -203,6 +220,26 @@
                 font-weight: 200;
                 font-family: serif;
             }
+            #accounts{
+                position: absolute;
+                left: 25%;
+                width: 80%;
+                height: 30px;
+                top: 60%;
+                color: #ffffff;
+                font-weight: 200;
+                font-family: serif;
+            }
+            #divMenuBox1_menuTxt{
+                position: relative;
+                left: 20%;
+                top: 25%;
+                width: 60%;
+                height: 60%;
+                font-size: 24px;
+                font-weight: 400;
+            }
+
         </style>
     </head>
     <body>
@@ -215,18 +252,19 @@
             </div>
             <div id="divLeftBlackSpace">
                 <div id="divLeftBlackSpace_management">Management</div>
-                <div id="allUsers"> <a style="color: #ffffff;" href="usersAll.jsp">Users</a></div>
+                <div id="allUsers"> <a style="color: #ffffff;" href="userAll.jsp">Users</a></div>
                 <div id="addProducts"> <a style="color: #ffffff;" href="laptopModelAdd.jsp">Laptop Model Add</a></div>
                 <div id="addUser"> <a style="color: #ffffff;" href="userAdd.jsp">User Add</a></div>
                 <div id="addGrn"> <a style="color: #ffffff;" href="GRN.jsp">Goods Received Note</a></div>
                 <div id="searchUser"> <a style="color: #ffffff;" href="userSearchFromControlPanel.jsp">User Search</a> </div>
-
+                <div id="accounts"> <a style="color: #ffffff;" href="accountStatusViewAll.jsp">Income / Expenses</a> </div>
             </div>
             <div id="divTopWhiteSpece">
                 <div id="divTopWhiteSpece_lblDashBoard">Dashboard   /</div>
             </div>
             <div id="divMenuBox1">
-                <div id="divMenuBox1_worldIcon"></div>
+                <div id="divMenuBox1_menuTxt">Global Users</div>
+                <div id="divMenuBox1_worldIcon"></div>               
             </div>
             <div id="divMenuBox2">
                 <div id="divMenuBox2_mailIcon"></div>
@@ -236,6 +274,14 @@
             </div>
             <div id="divMenuBox4">
                 <div id="divMenuBox4_dataBases"></div>
+            </div>
+            <div id="divMenuBox1_infoBox">
+                <%
+                    int count = userController.getUserCount();
+                %>   
+                <div id="divMenuBox1_infoBox_value">
+                    <%= count %>
+                </div>
             </div>
         </div>
     </body>

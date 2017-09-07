@@ -108,4 +108,11 @@ public class userDaoImpl implements userDao {
         User user = getFirstUserFromResultset(rset);
         return user;
     }
+
+    @Override
+    public ResultSet getUserCount() throws SQLException {
+        Connection con = DatabaseConnection2.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement("select user_count from user_count");
+        return ps.executeQuery();
+    }
 }

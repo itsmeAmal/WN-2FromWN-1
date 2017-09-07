@@ -38,7 +38,7 @@ public class userRemove extends HttpServlet {
             String userId = request.getParameter("hiddenId");
             boolean status = userController.removeUser(userId);
             if (status) {
-                response.sendRedirect("usersAll.jsp");
+                response.sendRedirect("userAll.jsp");
             }
 
         } catch (Exception e) {

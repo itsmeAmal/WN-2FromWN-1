@@ -17,6 +17,8 @@ import java.text.ParseException;
  */
 public class invoiceController {
 
+    
+    
     public static boolean addInvoice(String invoiceId, String Date, String invoiceUserId, String status, String deliverStatus) throws SQLException, ParseException {
         if (Validations.isNotEmpty(invoiceId) && Validations.isNotEmpty(Date) && Validations.isNotEmpty(invoiceUserId)) {
             invoiceDaoImpl invoiDaoImpl = new invoiceDaoImpl();
@@ -33,7 +35,7 @@ public class invoiceController {
         }
     }
 
-    public static boolean getAllInvoices(String invoiceId) throws SQLException {
+    public static boolean getAllInvoices() throws SQLException {
         invoiceDaoImpl invoiDaoImpl = new invoiceDaoImpl();
         invoiDaoImpl.getAllInvoices();
         return true;

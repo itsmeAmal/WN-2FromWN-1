@@ -30,4 +30,6 @@ public interface userDao {
     ResultSet getUsersByOneAttribute(String attribute, String condition, String value)throws SQLException; 
     
     User getUserByName(String userName)throws SQLException;
+    
+    ResultSet getUserCount()throws SQLException;
 }

@@ -67,6 +67,17 @@ public class userController {
         userDaoImpl userImpl = new userDaoImpl();
         User user = userImpl.getUserByName(userName);
         return user;
+        
+    }
+
+    public static int getUserCount() throws SQLException {
+        userDaoImpl userDaoImpl1 = new userDaoImpl();
+        ResultSet rset = userDaoImpl1.getUserCount();
+        int count = 0;
+        while (rset.next()) {
+            count = rset.getInt(1);
+        }
+        return count;
     }
 
 }
