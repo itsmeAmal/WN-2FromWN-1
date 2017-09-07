@@ -41,6 +41,7 @@ public class laptopPriceDetailController {
             laptopPriceDetail.setLaptopPriceDetailMinSellingPrice(Validations.getBigDecimalOrZeroFromString(minSellingPrice));
             laptopPriceDetail.setLaptopPriceDetailStatus(Validations.getIntOrZeroFromString(status));
             laptopPriceDetail.setLaptopPriceDetailQty(Validations.getIntOrZeroFromString(qty));
+            laptopPriceDetailDaoImpl.addLaptopPriceDetail(laptopPriceDetail); 
             return true;
         } else {
             return false;

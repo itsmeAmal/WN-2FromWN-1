@@ -5,6 +5,8 @@
  */
 package ifix.model;
 
+import java.sql.Date;
+
 /**
  *
  * @author 4m4l
@@ -17,6 +19,7 @@ public class PaymentHistoryDetail {
     private int paymentHistoryDetailQty;
     private double paymentHistoryDetailSoldPrice;
     private int paymentHistoryDetailStatus;
+    private Date paymentHistoryDetailDate;
 
     /**
      * @return the paymentHistoryDetailId
@@ -100,6 +103,20 @@ public class PaymentHistoryDetail {
      */
     public void setPaymentHistoryDetailStatus(int paymentHistoryDetailStatus) {
         this.paymentHistoryDetailStatus = paymentHistoryDetailStatus;
+    }
+
+    /**
+     * @return the paymentHistoryDetailDate
+     */
+    public Date getPaymentHistoryDetailDate() {
+        return paymentHistoryDetailDate;
+    }
+
+    /**
+     * @param paymentHistoryDetailDate the paymentHistoryDetailDate to set
+     */
+    public void setPaymentHistoryDetailDate(Date paymentHistoryDetailDate) {
+        this.paymentHistoryDetailDate = paymentHistoryDetailDate;
     }
             
     

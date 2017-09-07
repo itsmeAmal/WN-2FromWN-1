@@ -6,6 +6,7 @@
 package ifix.model;
 
 import java.math.BigDecimal;
+import java.sql.Date;
 
 /**
  *
@@ -20,6 +21,7 @@ public class laptopPriceDetail {
     private BigDecimal laptopPriceDetailMinSellingPrice;
     private int laptopPriceDetailStatus;
     private int laptopPriceDetailQty;
+    private Date laptopPriceDetailDate;
 
     /**
      * @return the laptopPriceDetailId
@@ -117,5 +119,19 @@ public class laptopPriceDetail {
      */
     public void setLaptopPriceDetailQty(int laptopPriceDetailQty) {
         this.laptopPriceDetailQty = laptopPriceDetailQty;
+    }
+
+    /**
+     * @return the laptopPriceDetailDate
+     */
+    public Date getLaptopPriceDetailDate() {
+        return laptopPriceDetailDate;
+    }
+
+    /**
+     * @param laptopPriceDetailDate the laptopPriceDetailDate to set
+     */
+    public void setLaptopPriceDetailDate(Date laptopPriceDetailDate) {
+        this.laptopPriceDetailDate = laptopPriceDetailDate;
     }
 }

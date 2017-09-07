@@ -19,12 +19,12 @@ import java.sql.SQLException;
  */
 public class paymentHistoryDetailDaoImpl implements paymentHistoryDetailDao {
 
-    private String selectQuery = "SELECT payment_history_detail_id, payment_history_detail_payment_id, payment_history_detail_laptop_model_id, payment_history_detail_qty, payment_history_detail_sold_price, payment_history_detail_status FROM payment_history_detail";
+    private String selectQuery = "SELECT payment_history_detail_id, payment_history_detail_payment_id, payment_history_detail_laptop_model_id, payment_history_detail_qty, payment_history_detail_sold_price, payment_history_detail_status, payment_history_detail_date FROM payment_history_detail";
 
     @Override
     public void addPaymentHistoryDetail(PaymentHistoryDetail paymentHistoryDetail) throws SQLException {
         Connection con = DatabaseConnection2.getDatabaseConnection();
-        PreparedStatement ps = con.prepareStatement("INSERT INTO payment_history_detail(payment_history_detail_id, payment_history_detail_payment_id, payment_history_detail_laptop_model_id, payment_history_detail_qty, payment_history_detail_sold_price, payment_history_detail_status) VALUES (?,?,?,?,?,?)");
+        PreparedStatement ps = con.prepareStatement("INSERT INTO payment_history_detail(payment_history_detail_id, payment_history_detail_payment_id, payment_history_detail_laptop_model_id, payment_history_detail_qty, payment_history_detail_sold_price, payment_history_detail_status, payment_history_detail_date) VALUES (?,?,?,?,?,?,?)");
         ps.setInt(1, paymentHistoryDetail.getPaymentHistoryDetailId());
         ps.setInt(2, paymentHistoryDetail.getPaymentHistoryDetailPaymentId());
         ps.setInt(3, paymentHistoryDetail.getPaymentHistoryDetailLaptopModelId());

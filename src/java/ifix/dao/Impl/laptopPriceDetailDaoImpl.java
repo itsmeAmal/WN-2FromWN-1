@@ -19,7 +19,7 @@ import java.sql.SQLException;
  */
 public class laptopPriceDetailDaoImpl implements laptopPriceDetailDao {
 
-    private String selectQuery = "SELECT laptop_price_detail_id, laptop_price_detail_model_id, laptop_price_detail_buying_price, laptop_price_detail_selling_price, laptop_price_detail_min_selling_price, laptop_price_detail_status, laptop_price_detail_qty  FROM laptop_price_detail";
+    private String selectQuery = "SELECT laptop_price_detail_id, laptop_price_detail_model_id, laptop_price_detail_buying_price, laptop_price_detail_selling_price, laptop_price_detail_min_selling_price, laptop_price_detail_status, laptop_price_detail_qty, laptop_price_detail_date  FROM laptop_price_detail";
 
     @Override
     public void addLaptopPriceDetail(laptopPriceDetail lapPriceDetail) throws SQLException {
@@ -98,6 +98,7 @@ public class laptopPriceDetailDaoImpl implements laptopPriceDetailDao {
             laptopPriceDetail1.setLaptopPriceDetailMinSellingPrice(rset.getBigDecimal("laptop_price_detail_min_selling_price"));
             laptopPriceDetail1.setLaptopPriceDetailStatus(rset.getInt("laptop_price_detail_status"));
             laptopPriceDetail1.setLaptopPriceDetailQty(rset.getInt("laptop_price_detail_qty"));
+            laptopPriceDetail1.setLaptopPriceDetailDate(rset.getDate("laptop_price_detail_date")); 
         }
         return laptopPriceDetail1;
     }
