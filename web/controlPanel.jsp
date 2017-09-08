@@ -76,6 +76,31 @@
                 height: 9%;
                 background-color: #33ccff;
             }
+            #divMenuBox2_infoBox{
+                position: absolute;
+                top: 23%;
+                width: 19%;
+                height: 18%;
+                left: 38%;
+                background-color: #006666;
+                color: #ffffff;
+                font-size: 40px;
+            }
+            #divMenuBox2_infoBox_value{
+                position: relative;
+                left: 40%;
+                top: 35%;
+
+            }
+            #divMenuBox2_menuTxt{
+                position: relative;
+                left: 40%;
+                top: 25%;
+                width: 60%;
+                height: 60%;
+                font-size: 24px;
+                font-weight: 400;               
+            }
             #divMenuBox3{
                 position: absolute;
                 left: 59%;
@@ -162,20 +187,30 @@
             }
             #divLeftBlackSpace_management{
                 position: absolute;
-                left: 20%;
-                top: 10%;
+                left: 10%;
+                top: 5%;
                 width: 80%;
                 height: 30px;
-                color: #ffffff;
-                font-size: 24px;
+                color: #0099ff;
+                font-size: 22px;
                 font-weight: 300;
+            }
+            #divLeftBlackSpace_stock_management{
+                position: absolute;
+                left: 10%;
+                top: 30%;
+                width: 80%;
+                height: 30px;
+                color: #0099ff;
+                font-size: 22px;
+                font-weight: 300;                
             }
             #allUsers{
                 position: absolute;
                 left: 25%;
                 width: 80%;
                 height: 30px;
-                top: 20%;
+                top: 10%;
                 color: #ffffff;
                 font-weight: 200;
                 font-family: serif;
@@ -185,7 +220,7 @@
                 left: 25%;
                 width: 80%;
                 height: 30px;
-                top: 45%;
+                top: 35%;
                 color: #ffffff;
                 font-weight: 200;
                 font-family: serif;
@@ -195,7 +230,7 @@
                 left: 25%;
                 width: 80%;
                 height: 30px;
-                top: 25%;
+                top: 15%;
                 color: #ffffff;
                 font-weight: 200;
                 font-family: serif;
@@ -205,17 +240,37 @@
                 left: 25%;
                 width: 80%;
                 height: 30px;
-                top: 50%;
+                top: 40%;
                 color: #ffffff;
                 font-weight: 200;
                 font-family: serif;
+            }
+            #viewGrnAll{
+                position: absolute;
+                left: 25%;
+                width: 80%;
+                height: 30px;
+                top: 45%;
+                color: #ffffff;
+                font-weight: 200;
+                font-family: serif;               
+            }
+            #allProducts{
+                position: absolute;
+                left: 25%;
+                width: 80%;
+                height: 30px;
+                top: 50%;
+                color: #ffffff;
+                font-weight: 200;
+                font-family: serif; 
             }
             #searchUser{
                 position: absolute;
                 left: 25%;
                 width: 80%;
                 height: 30px;
-                top: 30%;
+                top: 20%;
                 color: #ffffff;
                 font-weight: 200;
                 font-family: serif;
@@ -225,10 +280,20 @@
                 left: 25%;
                 width: 80%;
                 height: 30px;
-                top: 60%;
+                top: 65%;
                 color: #ffffff;
                 font-weight: 200;
                 font-family: serif;
+            }
+            #divLeftBlackSpace_accounts_management{
+                position: absolute;
+                left: 10%;
+                top: 60%;
+                width: 80%;
+                height: 30px;
+                color: #0099ff;
+                font-size: 22px;
+                font-weight: 300;                 
             }
             #divMenuBox1_menuTxt{
                 position: relative;
@@ -251,12 +316,19 @@
                 <div id="divTopBlueLine_cloudControl_txtCoudControl">Cloud Control</div>
             </div>
             <div id="divLeftBlackSpace">
-                <div id="divLeftBlackSpace_management">Management</div>
-                <div id="allUsers"> <a style="color: #ffffff;" href="userAll.jsp">Users</a></div>
-                <div id="addProducts"> <a style="color: #ffffff;" href="laptopModelAdd.jsp">Laptop Model Add</a></div>
+                <div id="divLeftBlackSpace_management">User Management</div>
+                <div id="allUsers"> <a style="color: #ffffff;" href="userAll.jsp">Users All</a></div>
                 <div id="addUser"> <a style="color: #ffffff;" href="userAdd.jsp">User Add</a></div>
-                <div id="addGrn"> <a style="color: #ffffff;" href="GRN.jsp">Goods Received Note</a></div>
                 <div id="searchUser"> <a style="color: #ffffff;" href="userSearchFromControlPanel.jsp">User Search</a> </div>
+
+                <div id="divLeftBlackSpace_stock_management">Stock & GRN</div>
+                <div id="addProducts"> <a style="color: #ffffff;" href="laptopModelAdd.jsp">Laptop Model Add</a></div>
+                <div id="addGrn"> <a style="color: #ffffff;" href="GRN.jsp">Goods Received Note</a></div>
+                <div id="viewGrnAll"> <a style="color: #ffffff;" href="GrnStockDetails.jsp">Stock Records</a> </div>
+                <div id="allProducts"> <a style="color: #ffffff;" href="laptopModelAll.jsp">Products - Cust.View</a> </div>
+
+
+                <div id="divLeftBlackSpace_accounts_management">Accounts</div>
                 <div id="accounts"> <a style="color: #ffffff;" href="accountStatusViewAll.jsp">Income / Expenses</a> </div>
             </div>
             <div id="divTopWhiteSpece">
@@ -267,6 +339,7 @@
                 <div id="divMenuBox1_worldIcon"></div>               
             </div>
             <div id="divMenuBox2">
+                <div id="divMenuBox2_menuTxt">Mail</div>
                 <div id="divMenuBox2_mailIcon"></div>
             </div>
             <div id="divMenuBox3">
@@ -280,9 +353,13 @@
                     int count = userController.getUserCount();
                 %>   
                 <div id="divMenuBox1_infoBox_value">
-                    <%= count %>
+                    <%= count%>
                 </div>
             </div>
+            <div id="divMenuBox2_infoBox">
+                <div id="divMenuBox2_infoBox_value"></div>
+            </div>
+
         </div>
     </body>
 </html>
