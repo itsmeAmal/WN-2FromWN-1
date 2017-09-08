@@ -4,9 +4,9 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import java.sql.ResultSet;
-import ifix.controller.accountStatusController;
+import ifix.controller.laptopPriceDetailController;
 
-public final class accountStatusViewAll_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class GrnStockDetails_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -52,7 +52,7 @@ public final class accountStatusViewAll_jsp extends org.apache.jasper.runtime.Ht
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title> Account Status | iFix</title>\n");
+      out.write("        <title> Stock | iFix</title>\n");
       out.write("\n");
       out.write("        <style>\n");
       out.write("            #logo{\n");
@@ -92,54 +92,51 @@ public final class accountStatusViewAll_jsp extends org.apache.jasper.runtime.Ht
       out.write("            tr:nth-child(even){background-color: #f2f2f2}\n");
       out.write("            tr:nth-child(odd){color: #ffffff;}\n");
       out.write("\n");
-      out.write("\n");
       out.write("        </style>\n");
       out.write("        <link rel=\"stylesheet\" href=\"com.official.cazzendra.css.common/bootstrap.min.css\">\n");
       out.write("\n");
       out.write("    </head>\n");
-      out.write("    <body style=\"background-color: #000000;\">\n");
+      out.write("    <body>\n");
       out.write("        <div style=\"position: absolute; left: 0px; width: 100%; top: 0px; height: 100%; background-color: #000000;\">\n");
       out.write("            <div id=\"logo\"></div>\n");
       out.write("            ");
 
-                accountStatusController acStatusController = new accountStatusController();
-                ResultSet rset = acStatusController.getAllRecords();
+                laptopPriceDetailController lapPriceDetailController = new laptopPriceDetailController();
+                ResultSet rset = lapPriceDetailController.getAlllaptopPriceDetails();
             
       out.write("\n");
       out.write("            <div style=\"position: absolute; left: 10%; width: 80%; top: 30%; height: content-box; background-color: #ffffff;\">\n");
       out.write("                <table id=\"accounts\">\n");
-      out.write("                    <th>Date</th>\n");
-      out.write("                    <th>Product As Invoice</th>\n");
+      out.write("                    <th>Laptop Model</th>\n");
+      out.write("                    <th>Buying Price</th>\n");
+      out.write("                    <th>Selling Price</th>\n");
+      out.write("                    <th>Min. Selling Price</th>\n");
       out.write("                    <th>Quantity</th>\n");
-      out.write("                    <th>Unit Price</th>\n");
-      out.write("                    <th>Expense</th>\n");
-      out.write("                    <th>Income</th>\n");
-      out.write("                    ");
- while (rset.next()) {
+      out.write("                        ");
+                
+                            while (rset.next()) {
+
+                        
       out.write("\n");
       out.write("\n");
       out.write("                    <tr class=\"colomn-purp\">\n");
       out.write("                        <td>");
-      out.print( rset.getDate(1));
+      out.print( rset.getString(2));
       out.write("</td>\n");
       out.write("                        <td>");
-      out.print( rset.getString(2));
-      out.write(" </td>\n");
-      out.write("                        <td>");
-      out.print( rset.getInt(3));
-      out.write(" </td>\n");
+      out.print( rset.getBigDecimal(3));
+      out.write("</td>\n");
       out.write("                        <td>");
       out.print( rset.getBigDecimal(4));
-      out.write(" </td>\n");
+      out.write("</td>\n");
       out.write("                        <td>");
       out.print( rset.getBigDecimal(5));
-      out.write(" </td>\n");
+      out.write("</td>\n");
       out.write("                        <td>");
-      out.print( rset.getBigDecimal(6));
-      out.write(" </td>\n");
+      out.print( rset.getInt(7));
+      out.write("</td>\n");
       out.write("                    </tr>\n");
       out.write("                    ");
-
                         }
                     
       out.write("\n");
@@ -147,6 +144,36 @@ public final class accountStatusViewAll_jsp extends org.apache.jasper.runtime.Ht
       out.write("            </div>\n");
       out.write("\n");
       out.write("        </div>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("        <!--        \n");
+      out.write("                \n");
+      out.write("                \n");
+      out.write("                \n");
+      out.write("                \n");
+      out.write("                <div style=\"position: absolute; left: 0px; width: 100%; top: 0px; height: 100%; background-color: #000000;\">\n");
+      out.write("                    <div style=\"position: absolute; left: 10%; width: 80%; top: 10%; height: 80%; background-color: #ffffff;\">\n");
+      out.write("                        <div id=\"logo\"></div>\n");
+      out.write("        \n");
+      out.write("                        <table>\n");
+      out.write("                            <th>Laptop Model</th>\n");
+      out.write("                            <th>Buying Price</th>\n");
+      out.write("                            <th>Selling Price</th>\n");
+      out.write("                            <th>Min. Selling Price</th>\n");
+      out.write("                            <th>Quantity</th>\n");
+      out.write("                        \n");
+      out.write("                            <tr>\n");
+      out.write("                                <td></td>\n");
+      out.write("                                <td></td>\n");
+      out.write("                                <td></td>\n");
+      out.write("                                <td></td>\n");
+      out.write("                                <td></td>\n");
+      out.write("                            </tr>\n");
+      out.write("                        </table>\n");
+      out.write("        \n");
+      out.write("                    </div>\n");
+      out.write("        \n");
+      out.write("                </div>-->\n");
       out.write("\n");
       out.write("    </body>\n");
       out.write("</html>\n");

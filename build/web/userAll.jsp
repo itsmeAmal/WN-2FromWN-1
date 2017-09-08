@@ -25,8 +25,8 @@
             }
             #accounts{
                 position: absolute;
-                left: 20%; 
-                width: 60%;
+                left: 10%; 
+                width: 80%;
                 top: 30%;
                 height: 100%;
             }
@@ -49,7 +49,7 @@
 
             }
             tr{
-                height: 25px;
+                height: 40px;
             }
 
             tr:nth-child(even){background-color: #f2f2f2}

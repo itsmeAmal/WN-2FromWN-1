@@ -3,10 +3,11 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import ifix.controller.userController;
 import java.sql.ResultSet;
 import ifix.controller.accountStatusController;
 
-public final class accountStatusViewAll_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class userAll_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -48,11 +49,12 @@ public final class accountStatusViewAll_jsp extends org.apache.jasper.runtime.Ht
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title> Account Status | iFix</title>\n");
+      out.write("        <title> Users | iFix</title>\n");
       out.write("\n");
       out.write("        <style>\n");
       out.write("            #logo{\n");
@@ -88,6 +90,9 @@ public final class accountStatusViewAll_jsp extends org.apache.jasper.runtime.Ht
       out.write("                font-weight: 300;\n");
       out.write("\n");
       out.write("            }\n");
+      out.write("            tr{\n");
+      out.write("                height: 40px;\n");
+      out.write("            }\n");
       out.write("\n");
       out.write("            tr:nth-child(even){background-color: #f2f2f2}\n");
       out.write("            tr:nth-child(odd){color: #ffffff;}\n");
@@ -98,56 +103,48 @@ public final class accountStatusViewAll_jsp extends org.apache.jasper.runtime.Ht
       out.write("\n");
       out.write("    </head>\n");
       out.write("    <body style=\"background-color: #000000;\">\n");
-      out.write("        <div style=\"position: absolute; left: 0px; width: 100%; top: 0px; height: 100%; background-color: #000000;\">\n");
-      out.write("            <div id=\"logo\"></div>\n");
-      out.write("            ");
-
-                accountStatusController acStatusController = new accountStatusController();
-                ResultSet rset = acStatusController.getAllRecords();
-            
+      out.write("        <form action=\"userRemove\">\n");
       out.write("\n");
-      out.write("            <div style=\"position: absolute; left: 10%; width: 80%; top: 30%; height: content-box; background-color: #ffffff;\">\n");
-      out.write("                <table id=\"accounts\">\n");
-      out.write("                    <th>Date</th>\n");
-      out.write("                    <th>Product As Invoice</th>\n");
-      out.write("                    <th>Quantity</th>\n");
-      out.write("                    <th>Unit Price</th>\n");
-      out.write("                    <th>Expense</th>\n");
-      out.write("                    <th>Income</th>\n");
-      out.write("                    ");
+      out.write("            <div style=\"position: absolute; left: 0px; width: 100%; top: 0px; height: 100%; background-color: #000000;\">\n");
+      out.write("                <div id=\"logo\"></div>\n");
+      out.write("                ");
+
+                    userController controller = new userController();
+                    ResultSet rset = rset = controller.getAllUsers();
+                
+      out.write("\n");
+      out.write("                <div style=\"position: absolute; left: 10%; width: 80%; top: 30%; height: content-box; background-color: #ffffff;\">\n");
+      out.write("                    <table id=\"accounts\">\n");
+      out.write("                        <th>User Name</th>\n");
+      out.write("                        <th>Email</th>                    \n");
+      out.write("                        <th>Delete</th>\n");
+      out.write("\n");
+      out.write("                        ");
  while (rset.next()) {
       out.write("\n");
       out.write("\n");
-      out.write("                    <tr class=\"colomn-purp\">\n");
-      out.write("                        <td>");
-      out.print( rset.getDate(1));
-      out.write("</td>\n");
-      out.write("                        <td>");
+      out.write("                        <tr class=\"table-responsive\">\n");
+      out.write("                            <td>");
       out.print( rset.getString(2));
-      out.write(" </td>\n");
-      out.write("                        <td>");
-      out.print( rset.getInt(3));
-      out.write(" </td>\n");
-      out.write("                        <td>");
-      out.print( rset.getBigDecimal(4));
-      out.write(" </td>\n");
-      out.write("                        <td>");
-      out.print( rset.getBigDecimal(5));
-      out.write(" </td>\n");
-      out.write("                        <td>");
-      out.print( rset.getBigDecimal(6));
-      out.write(" </td>\n");
-      out.write("                    </tr>\n");
-      out.write("                    ");
+      out.write("</td>\n");
+      out.write("                            <td>");
+      out.print( rset.getString(6));
+      out.write("</td> \n");
+      out.write("                        <input type=\"hidden\" name=\"hiddenId\" value=\"");
+      out.print(rset.getInt(1));
+      out.write("\" />\n");
+      out.write("                        <td> <input type=\"submit\" name=\"btn-1\" value=\"DELETE\" class=\"btn btn-danger\" style=\"height: 35;\" />  </td>\n");
+      out.write("                        </tr>\n");
+      out.write("                        ");
 
-                        }
-                    
+                            }
+                        
       out.write("\n");
-      out.write("                </table>\n");
+      out.write("                    </table>\n");
+      out.write("                </div>\n");
+      out.write("\n");
       out.write("            </div>\n");
-      out.write("\n");
-      out.write("        </div>\n");
-      out.write("\n");
+      out.write("        </form>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

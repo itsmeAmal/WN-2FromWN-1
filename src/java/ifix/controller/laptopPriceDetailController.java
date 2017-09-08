@@ -8,6 +8,7 @@ package ifix.controller;
 import ifix.core.Validations;
 import ifix.dao.Impl.laptopPriceDetailDaoImpl;
 import ifix.model.laptopPriceDetail;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -41,7 +42,7 @@ public class laptopPriceDetailController {
             laptopPriceDetail.setLaptopPriceDetailMinSellingPrice(Validations.getBigDecimalOrZeroFromString(minSellingPrice));
             laptopPriceDetail.setLaptopPriceDetailStatus(Validations.getIntOrZeroFromString(status));
             laptopPriceDetail.setLaptopPriceDetailQty(Validations.getIntOrZeroFromString(qty));
-            laptopPriceDetailDaoImpl.addLaptopPriceDetail(laptopPriceDetail); 
+            laptopPriceDetailDaoImpl.addLaptopPriceDetail(laptopPriceDetail);
             return true;
         } else {
             return false;
@@ -58,22 +59,21 @@ public class laptopPriceDetailController {
         }
     }
 
-    public static boolean getAlllaptopPriceDetails() throws SQLException {
+    public static ResultSet getAlllaptopPriceDetails() throws SQLException {
         laptopPriceDetailDaoImpl lapDetailDaoImpl = new laptopPriceDetailDaoImpl();
-        lapDetailDaoImpl.getAllLaptopPriceDetail();
-        return true;
+        return lapDetailDaoImpl.getAllLaptopPriceDetail();
+
     }
 
     public static int getLaptopQtyByLaptopModelId(String laptopModelNo) throws SQLException {
         laptopPriceDetailDaoImpl laptopPriceDetailDaoImpl = new laptopPriceDetailDaoImpl();
         return laptopPriceDetailDaoImpl.getLaptopQtyById(laptopModelNo);
     }
-    
-    public static laptopPriceDetail getLaptopPriceDetailByLaptopModelId(String laptopModelId)throws SQLException{
-    laptopPriceDetailDaoImpl lapDetailDaoImpl = new laptopPriceDetailDaoImpl();
-    laptopPriceDetail lapPriceDetail = lapDetailDaoImpl.getLaptopPriceDetailByModelId(laptopModelId);
-    return lapPriceDetail;
+
+    public static laptopPriceDetail getLaptopPriceDetailByLaptopModelId(String laptopModelId) throws SQLException {
+        laptopPriceDetailDaoImpl lapDetailDaoImpl = new laptopPriceDetailDaoImpl();
+        laptopPriceDetail lapPriceDetail = lapDetailDaoImpl.getLaptopPriceDetailByModelId(laptopModelId);
+        return lapPriceDetail;
     }
-    
 
 }

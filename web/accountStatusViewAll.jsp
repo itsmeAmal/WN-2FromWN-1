@@ -24,8 +24,8 @@
             }
             #accounts{
                 position: absolute;
-                left: 20%; 
-                width: 60%;
+                left: 10%; 
+                width: 80%;
                 top: 30%;
                 height: 100%;
             }
@@ -71,12 +71,10 @@
                     <th>Unit Price</th>
                     <th>Expense</th>
                     <th>Income</th>
-                    
-
                     <% while (rset.next()) {%>
 
                     <tr class="colomn-purp">
-                        <td><%= rset.getDate(1) %></td>
+                        <td><%= rset.getDate(1)%></td>
                         <td><%= rset.getString(2)%> </td>
                         <td><%= rset.getInt(3)%> </td>
                         <td><%= rset.getBigDecimal(4)%> </td>
