@@ -360,11 +360,11 @@ public final class controlPanel_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("                <div id=\"divLeftBlackSpace_management\">User Management</div>\n");
       out.write("                <div id=\"allUsers\"> <a style=\"color: #ffffff;\" href=\"userAll.jsp\">Users All</a></div>\n");
       out.write("                <div id=\"addUser\"> <a style=\"color: #ffffff;\" href=\"userAdd.jsp\">User Add</a></div>\n");
-      out.write("                <div id=\"searchUser\"> <a style=\"color: #ffffff;\" href=\"userSearchFromControlPanel.jsp\">User Search</a> </div>\n");
+      out.write("                <div id=\"searchUser\"> <a style=\"color: #ffffff;\" href=\"userSearchFromControlPanel.jsp\">User Search / View / Update</a> </div>\n");
       out.write("\n");
       out.write("                <div id=\"divLeftBlackSpace_stock_management\">Stock & GRN</div>\n");
       out.write("                <div id=\"addProducts\"> <a style=\"color: #ffffff;\" href=\"laptopModelAdd.jsp\">Laptop Model Add</a></div>\n");
-      out.write("                <div id=\"addGrn\"> <a style=\"color: #ffffff;\" href=\"GRN.jsp\">Goods Received Note</a></div>\n");
+      out.write("                <div id=\"addGrn\"> <a style=\"color: #ffffff;\" href=\"GRN.jsp\">GRN Add</a></div>\n");
       out.write("                <div id=\"viewGrnAll\"> <a style=\"color: #ffffff;\" href=\"GrnStockDetails.jsp\">Stock Records</a> </div>\n");
       out.write("                <div id=\"allProducts\"> <a style=\"color: #ffffff;\" href=\"laptopModelAll.jsp\">Products - Cust.View</a> </div>\n");
       out.write("\n");

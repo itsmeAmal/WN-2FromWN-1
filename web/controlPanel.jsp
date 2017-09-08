@@ -319,11 +319,11 @@
                 <div id="divLeftBlackSpace_management">User Management</div>
                 <div id="allUsers"> <a style="color: #ffffff;" href="userAll.jsp">Users All</a></div>
                 <div id="addUser"> <a style="color: #ffffff;" href="userAdd.jsp">User Add</a></div>
-                <div id="searchUser"> <a style="color: #ffffff;" href="userSearchFromControlPanel.jsp">User Search</a> </div>
+                <div id="searchUser"> <a style="color: #ffffff;" href="userSearchFromControlPanel.jsp">User Search / View / Update</a> </div>
 
                 <div id="divLeftBlackSpace_stock_management">Stock & GRN</div>
                 <div id="addProducts"> <a style="color: #ffffff;" href="laptopModelAdd.jsp">Laptop Model Add</a></div>
-                <div id="addGrn"> <a style="color: #ffffff;" href="GRN.jsp">Goods Received Note</a></div>
+                <div id="addGrn"> <a style="color: #ffffff;" href="GRN.jsp">GRN Add</a></div>
                 <div id="viewGrnAll"> <a style="color: #ffffff;" href="GrnStockDetails.jsp">Stock Records</a> </div>
                 <div id="allProducts"> <a style="color: #ffffff;" href="laptopModelAll.jsp">Products - Cust.View</a> </div>
 
