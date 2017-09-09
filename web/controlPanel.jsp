@@ -133,7 +133,7 @@
                 top: 20%;
                 width: 48px;
                 height: 48px;
-                background-image: url('web.pos.ee.images/world.png');               
+                background-image: url('com.official.cazzendra.images.cpanel/world.png');               
             }
             #divMenuBox2_mailIcon{
                 position: absolute;
@@ -141,7 +141,7 @@
                 top: 20%;
                 width: 48px;
                 height: 48px;
-                background-image: url('web.pos.ee.images/mail.png'); 
+                background-image: url('com.official.cazzendra.images.cpanel/mail.png'); 
             }
             #divMenuBox3_fieldsIcon{
                 position: absolute;
@@ -149,7 +149,7 @@
                 top: 20%;
                 width: 48px;
                 height: 48px;
-                background-image: url('web.pos.ee.images/fields.png'); 
+                background-image: url('com.official.cazzendra.images.cpanel/fields.png'); 
             }
             #divMenuBox4_dataBases{
                 position: absolute;
@@ -157,7 +157,7 @@
                 top: 20%;
                 width: 48px;
                 height: 48px;
-                background-image: url('web.pos.ee.images/db.png'); 
+                background-image: url('com.official.cazzendra.images.cpanel/db.png'); 
             }
             #divTopBlueLine_cloudControl{
                 position: absolute;
@@ -173,7 +173,7 @@
                 width: 32px;
                 height: 32px;
                 top: 0px;
-                background-image: url('web.pos.ee.images/cloudcontrol.png');
+                background-image: url('com.official.cazzendra.images.cpanel/cloudcontrol.png');
             }
             #divTopBlueLine_cloudControl_txtCoudControl{
                 position: absolute;

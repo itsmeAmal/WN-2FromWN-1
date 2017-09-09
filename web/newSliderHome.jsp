@@ -265,8 +265,8 @@
         <link rel="stylesheet" href="com.official.cazzendra.css.common/bootstrap.min.css">
         <link rel="stylesheet" href="style.css">
         <%-- javascript image slider--%>
-        <link href="themes/3/js-image-slider.css" rel="stylesheet" type="text/css" />
-        <script src="themes/3/js-image-slider.js" type="text/javascript"></script>
+        <link href="com.official.cazzendra.slider/3/js-image-slider.css" rel="stylesheet" type="text/css" />
+        <script src="com.official.cazzendra.slider/3/js-image-slider.js" type="text/javascript"></script>
         <link href="generic.css" rel="stylesheet" type="text/css" />
         <style type="text/css">
             .cap  {width:190px;height:240px;display:inline-block;background:white url(com.official.cazzendra.images.background/caption1.png) no-repeat 0 0;border-radius:4px;}
