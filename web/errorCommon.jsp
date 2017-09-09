@@ -28,6 +28,14 @@
                 height: 80%;
                 background-image: url("com.official.cazzendra.images.error/error.jpg");
             }
+            #customMsg{
+                position: absolute;
+                left: 60%;
+                width: 35%;
+                top: 30%;
+                height: 65%;
+                
+            }
         </style>
         <link rel="stylesheet" href="com.official.cazzendra.css.common/bootstrap.min.css">
 
@@ -37,7 +45,14 @@
             <div style="position: absolute; left: 10%; width: 80%; top: 10%; height: 80%; background-color: #ffffff;">
                 <div id="logo"></div>
                 <div id="errorImage"></div>
-                <div id=""></div>
+                <div id="customMsg">
+                    <div style="position: relative; left: 10%; top: 10%; width: 80%; height: 30%; font-family: monospace; font-size: 60px; font-weight: 300; color: #0033cc;">
+                        SORRY
+                    </div>
+                    <div style="position: relative; left: 10%; top: 10%; width: 80%; height: 20%; font-family: monospace; font-size: 24px; font-weight: 100; color: #0033cc;">
+                        The page is under Construction.
+                    </div>
+                </div>
             </div>
 
         </div>
