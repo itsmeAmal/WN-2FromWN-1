@@ -6,6 +6,7 @@
 package ifix.dao.Impl;
 
 import ifix.connection.DatabaseConnection2;
+import ifix.core.CommonConstants;
 import ifix.dao.laptopModelDao;
 import ifix.model.LaptopModel;
 import java.sql.Connection;
@@ -26,19 +27,19 @@ public class laptopModelDaoImpl implements laptopModelDao {
         Connection con = DatabaseConnection2.getDatabaseConnection();
         PreparedStatement ps = con.prepareStatement("INSERT INTO laptop_model(laptop_model_id, laptop_model_laptop_id, laptop_model_hard_disk, laptop_model_ram, laptop_model_vga, laptop_model_processor, laptop_model_usb_type_1, laptop_model_usb_type_2, laptop_model_hdmi,laptop_model_status, laptop_model_image_path) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         ps.setInt(1, laptopModel.getLaptopModelId());
-        ps.setInt(2, laptopModel.getLaptopModelLaptopId());
+        ps.setString(2, laptopModel.getLaptopModelLaptopId());
         ps.setString(3, laptopModel.getLaptopModelHardDisk());
         ps.setString(4, laptopModel.getLaptopModelRam());
         ps.setString(5, laptopModel.getLaptopModelVga());
         ps.setString(6, laptopModel.getLaptopModelProcessor());
         ps.setString(7, laptopModel.getLaptopModelUsbType1());
         ps.setString(8, laptopModel.getLaptopModelUsbType2());
-        ps.setBoolean(9, laptopModel.isLaptopModelHdmi());
-        ps.setBoolean(10, laptopModel.isLaptopModelVgaUotput());
+        ps.setString(9, laptopModel.getLaptopModelHdmi());
+        ps.setString(10, laptopModel.getLaptopModelVgaUotput());
         ps.setString(11, laptopModel.getLaptopModelScreenSize());
         ps.setInt(12, laptopModel.getLaotopModelCacheMemory());
         ps.setInt(13, laptopModel.getLaptopModelStatus());
-        ps.setString(14, laptopModel.getLaptopImagePath()); 
+        ps.setString(14, laptopModel.getLaptopImagePath());
         ps.executeQuery();
         ps.close();
     }
@@ -48,20 +49,20 @@ public class laptopModelDaoImpl implements laptopModelDao {
         Connection con = DatabaseConnection2.getDatabaseConnection();
         PreparedStatement ps = con.prepareStatement("UPDATE laptop_model SET laptop_model_id=?, laptop_model_laptop_id=?, laptop_model_hard_disk=?, laptop_model_ram=?, laptop_model_vga=?, laptop_model_processor=?, laptop_model_usb_type_1=?, laptop_model_usb_type_2=?, laptop_model_hdmi=?, laptop_model_vga_output=?, laptop_model_screen_size=?, laptop_model_cache_memory=?, laptop_model_status=?, laptop_model_image_path=? WHERE laptop_model_id=?");
         ps.setInt(1, laptopModel.getLaptopModelId());
-        ps.setInt(2, laptopModel.getLaptopModelLaptopId());
+        ps.setString(2, laptopModel.getLaptopModelLaptopId());
         ps.setString(3, laptopModel.getLaptopModelHardDisk());
         ps.setString(4, laptopModel.getLaptopModelRam());
         ps.setString(5, laptopModel.getLaptopModelVga());
         ps.setString(6, laptopModel.getLaptopModelProcessor());
         ps.setString(7, laptopModel.getLaptopModelUsbType1());
         ps.setString(8, laptopModel.getLaptopModelUsbType2());
-        ps.setBoolean(9, laptopModel.isLaptopModelHdmi());
-        ps.setBoolean(10, laptopModel.isLaptopModelVgaUotput());
+        ps.setString(9, laptopModel.getLaptopModelHdmi());
+        ps.setString(10, laptopModel.getLaptopModelVgaUotput());
         ps.setString(11, laptopModel.getLaptopModelScreenSize());
         ps.setInt(12, laptopModel.getLaotopModelCacheMemory());
         ps.setInt(13, laptopModel.getLaptopModelStatus());
         ps.setString(14, laptopModel.getLaptopImagePath());
-        ps.setInt(15, laptopModel.getLaptopModelId()); 
+        ps.setInt(15, laptopModel.getLaptopModelId());
         ps.executeQuery();
         ps.close();
 
@@ -88,7 +89,37 @@ public class laptopModelDaoImpl implements laptopModelDao {
     }
 
     @Override
-    public LaptopModel getLaptopModelById(String laptopModelId) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public LaptopModel getLaptopModelById(String laptopModelLaptopId) throws SQLException {
+        ResultSet rset = getLaptopModelsByOneAttribute("laptop_model_laptop_id", CommonConstants.sql.LIKE, laptopModelLaptopId);
+        LaptopModel laptopModel = getFirstLaptopModelByResultSet(rset);
+        return laptopModel;
+    }
+
+    @Override
+    public ResultSet getLaptopModelsByOneAttribute(String attribute, String condition, String value) throws SQLException {
+        return new commonDaoImpl().getResultByAttribute(selectQuery, attribute, condition, value);
+    }
+
+    @Override
+    public LaptopModel getFirstLaptopModelByResultSet(ResultSet resultSet) throws SQLException {
+        LaptopModel laptopModel = null;
+        while (resultSet.next()) {
+            laptopModel = new LaptopModel();
+            laptopModel.setLaptopModelId(resultSet.getInt("laptop_model_id"));
+            laptopModel.setLaptopModelLaptopId(resultSet.getString("laptop_model_laptop_id"));
+            laptopModel.setLaptopModelHardDisk(resultSet.getString("laptop_model_hard_disk"));
+            laptopModel.setLaptopModelRam(resultSet.getString("laptop_model_ram"));
+            laptopModel.setLaptopModelVga(resultSet.getString("laptop_model_vga"));
+            laptopModel.setLaptopModelProcessor(resultSet.getString("laptop_model_processor"));
+            laptopModel.setLaptopModelUsbType1(resultSet.getString("laptop_model_usb_type_1"));
+            laptopModel.setLaptopModelUsbType2(resultSet.getString("laptop_model_usb_type_2"));
+            laptopModel.setLaptopModelHdmi(resultSet.getString("laptop_model_hdmi"));
+            laptopModel.setLaptopModelVgaUotput(resultSet.getString("laptop_model_vga_output"));
+            laptopModel.setLaptopModelScreenSize(resultSet.getString("laptop_model_screen_size"));
+            laptopModel.setLaotopModelCacheMemory(resultSet.getInt("laptop_model_cache_memory"));
+            laptopModel.setLaptopImagePath(resultSet.getString("laptop_model_image_path"));
+        }
+        return laptopModel;
+
     }
 }

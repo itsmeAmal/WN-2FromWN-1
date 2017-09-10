@@ -16,11 +16,11 @@ import java.sql.SQLException;
  */
 public class laptopModelController {
 
-    public static boolean addlaptopModel(String modelId, String laptopId, String hardDisk, String ram, String vga, String processor, String usbType1, String usbType2, boolean hdmi, boolean vgaOP, String screenSize, String cache, String status) throws SQLException {
+    public static boolean addlaptopModel(String modelId, String laptopId, String hardDisk, String ram, String vga, String processor, String usbType1, String usbType2, String hdmi, String vgaOP, String screenSize, String cache, String status) throws SQLException {
         laptopModelDaoImpl lapModelDaoImpl = new laptopModelDaoImpl();
         LaptopModel laptopModel = new LaptopModel();
-        laptopModel.setLaptopModelId(Validations.getIntOrZeroFromString(modelId));
-        laptopModel.setLaptopModelLaptopId(Validations.getIntOrZeroFromString(laptopId));
+        laptopModel.setLaptopModelId(Validations.getIntFromString(laptopId));
+        laptopModel.setLaptopModelLaptopId(modelId);
         laptopModel.setLaptopModelHardDisk(hardDisk);
         laptopModel.setLaptopModelRam(ram);
         laptopModel.setLaptopModelVga(vga);
@@ -34,6 +34,9 @@ public class laptopModelController {
         laptopModel.setLaptopModelStatus(Validations.getIntOrZeroFromString(cache));
         lapModelDaoImpl.addLaptopModel(laptopModel);
         return true;
+    }
+    public static LaptopModel getLaptopModelByLaptopModelId(String laptopModelLaotopId)throws SQLException{
+        return new laptopModelDaoImpl().getLaptopModelById(laptopModelLaotopId);
     }
 
 }

@@ -27,6 +27,10 @@ public interface laptopModelDao {
     
     LaptopModel getLaptopModelById(String laptopModelId)throws SQLException;
     
+    ResultSet getLaptopModelsByOneAttribute(String attribute, String condition, String value)throws SQLException;
+    
+    LaptopModel getFirstLaptopModelByResultSet(ResultSet resultSet)throws SQLException;
+    
     
     
 }

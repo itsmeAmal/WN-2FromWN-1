@@ -11,15 +11,15 @@ package ifix.model;
  */
 public class LaptopModel {
     private int laptopModelId;
-    private int laptopModelLaptopId;
+    private String laptopModelLaptopId;
     private String laptopModelHardDisk;
     private String laptopModelRam;
     private String laptopModelVga;
     private String laptopModelProcessor;
     private String laptopModelUsbType1;
     private String laptopModelUsbType2;
-    private boolean laptopModelHdmi;
-    private boolean laptopModelVgaUotput;
+    private String laptopModelHdmi;
+    private String laptopModelVgaUotput;
     private String laptopModelScreenSize;
     private int laptopModelCacheMemory;
     private int laptopModelStatus; 
@@ -42,14 +42,14 @@ public class LaptopModel {
     /**
      * @return the laptopModelLaptopId
      */
-    public int getLaptopModelLaptopId() {
+    public String getLaptopModelLaptopId() {
         return laptopModelLaptopId;
     }
 
     /**
      * @param laptopModelLaptopId the laptopModelLaptopId to set
      */
-    public void setLaptopModelLaptopId(int laptopModelLaptopId) {
+    public void setLaptopModelLaptopId(String laptopModelLaptopId) {
         this.laptopModelLaptopId = laptopModelLaptopId;
     }
 
@@ -137,33 +137,7 @@ public class LaptopModel {
         this.laptopModelUsbType2 = laptopModelUsbType2;
     }
 
-    /**
-     * @return the laptopModelHdmi
-     */
-    public boolean isLaptopModelHdmi() {
-        return laptopModelHdmi;
-    }
-
-    /**
-     * @param laptopModelHdmi the laptopModelHdmi to set
-     */
-    public void setLaptopModelHdmi(boolean laptopModelHdmi) {
-        this.laptopModelHdmi = laptopModelHdmi;
-    }
-
-    /**
-     * @return the laptopModelVgaUotput
-     */
-    public boolean isLaptopModelVgaUotput() {
-        return laptopModelVgaUotput;
-    }
-
-    /**
-     * @param laptopModelVgaUotput the laptopModelVgaUotput to set
-     */
-    public void setLaptopModelVgaUotput(boolean laptopModelVgaUotput) {
-        this.laptopModelVgaUotput = laptopModelVgaUotput;
-    }
+    
 
     /**
      * @return the laptopModelScreenSize
@@ -219,5 +193,33 @@ public class LaptopModel {
      */
     public void setLaptopImagePath(String laptopImagePath) {
         this.laptopImagePath = laptopImagePath;
+    }
+
+    /**
+     * @return the laptopModelHdmi
+     */
+    public String getLaptopModelHdmi() {
+        return laptopModelHdmi;
+    }
+
+    /**
+     * @param laptopModelHdmi the laptopModelHdmi to set
+     */
+    public void setLaptopModelHdmi(String laptopModelHdmi) {
+        this.laptopModelHdmi = laptopModelHdmi;
+    }
+
+    /**
+     * @return the laptopModelVgaUotput
+     */
+    public String getLaptopModelVgaUotput() {
+        return laptopModelVgaUotput;
+    }
+
+    /**
+     * @param laptopModelVgaUotput the laptopModelVgaUotput to set
+     */
+    public void setLaptopModelVgaUotput(String laptopModelVgaUotput) {
+        this.laptopModelVgaUotput = laptopModelVgaUotput;
     }
 }

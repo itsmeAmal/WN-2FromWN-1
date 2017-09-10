@@ -19,7 +19,7 @@
         <location>/errorCommon.jsp</location>
     </error-page>
     
-    <error-page>
+<!--    <error-page>
         <error-code>401</error-code>
         <location>/errorCommon.jsp</location>
     </error-page>
@@ -37,7 +37,7 @@
     <error-page>
         <error-code>500</error-code>
         <location>/errorCommon.jsp</location>
-    </error-page>
+    </error-page>-->
            
 </web-app>
   

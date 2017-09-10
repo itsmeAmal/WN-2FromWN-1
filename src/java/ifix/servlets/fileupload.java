@@ -114,7 +114,7 @@ public class fileupload extends HttpServlet {
                     s.save(laptopModel);
                     s.beginTransaction().commit();
                     s.close();
-                    response.sendRedirect("laptopModelAdd.jsp"); 
+                    response.sendRedirect("GRN.jsp"); 
                 }
 
             }
