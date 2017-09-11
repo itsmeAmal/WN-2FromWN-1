@@ -80,7 +80,7 @@
                 </form>
                 <%
                     if (lapPriceDetail.getLaptopPriceDetailQty() == 0) {
-
+                        
 
                 %>
                 <div style="background-color: #ccccff; position: absolute; left: 60%; top: 45%; width: 25%; height: 30%;">

@@ -4,6 +4,7 @@
     Author     : 4m4l
 --%>
 
+<%@page import="ifix.core.Validations"%>
 <%@page import="ifix.controller.laptopPriceDetailController"%>
 <%@page import="ifix.model.laptopPriceDetail"%>
 <%@page import="ifix.controller.laptopModelController"%>
@@ -43,7 +44,7 @@
 
                 <div style="position: absolute; left: 40%; top: 32%; width: 15%; height: 30px; color: #6699ff;" >Item Description</div>
 
-                <div style="position: absolute; left: 13%; top: 40%; width: 250px; height: 250px; "><img src="<%= laptopModel.getLaptopImagePath() %>"></div>
+                <div style="position: absolute; left: 13%; top: 40%; width: 250px; height: 250px; "><img src="<%= laptopModel.getLaptopImagePath()%>"></div>
                 <div style="position: absolute; left: 13%; top: 25%; width: 40%; height: 10%; font-size: 34px; color: #666666;"><%= laptopModel.getLaptopModelLaptopId()%></div>
 
                 <div style="position: absolute; left: 40%; top: 40%; width: 10%; height: 30px; color: #999999; ">Hard Disk  :</div>
@@ -77,48 +78,70 @@
                 <div style="position: absolute; left: 50%; top: 85%; width: 20%; height: 30px; font-weight: 600; "><%= laptopModel.getLaotopModelCacheMemory()%></div>
 
                 <%
-                        laptopPriceDetail lapPriceDetail = laptopPriceDetailController.getLaptopPriceDetailByLaptopModelId(String.valueOf(laptopModel.getLaptopModelLaptopId()));                  
+                    laptopPriceDetail lapPriceDetail = laptopPriceDetailController.getLaptopPriceDetailByLaptopModelId(String.valueOf(laptopModel.getLaptopModelLaptopId()));
                 %>
+
+
                 <!--all are brand new--> 
                 <div style="position: absolute; left: 65%; width: 25%; top: 40%; height: 20%; color: #333333; background-color: #ccccff;">
                     <p style="position: relative; left: 10%; top: 10%; width: 80%; height: 80%; color: #000099;">
                         Important : All products are sold here in brand new condition. Used or Re-Conditioned laptops are not sold.
                     </p>
                 </div>
-                
+
                 <!--available qty-->
                 <div style="position: absolute; left: 65%; width: 25%; height: 30px; top: 61%; color: #999999; font-size: 14px; ">
-                    Available quantity          :    <%=lapPriceDetail.getLaptopPriceDetailQty() %>
+                    Available quantity          :    <%=lapPriceDetail.getLaptopPriceDetailQty()%>
                 </div>
                 <!--selling price-->
                 <div style="position: absolute; left: 65%; top: 67%; width: 25%; height: 30px; font-weight: 600; font-size: 20px;">
                     Rs 
                 </div>
-                
+
                 <div style="position: absolute; left: 68%; top: 67%; width: 25%; height: 30px; font-weight: 600; font-size: 20px; ">
-                    <%=lapPriceDetail.getLaptopPriceDetailSellingPrice() %>
+                    <%=lapPriceDetail.getLaptopPriceDetailSellingPrice()%>
                 </div>
 
-                <!--two buttons for add to cart and buy now-->
-                <div style="position: absolute; left: 65%; top: 73%; width: 25%; height: 30px;">
-                    <input type="submit" name="btn_add_to_cart" value="Add to cart" class="btn btn-info" style="width: 200px;" /> 
-                </div>
-                <div style="position: absolute; left: 65%; top: 81%; width: 25%; height: 30px;">
-                    <input type="submit" name="btn_buy_now" value="Buy now" class="btn btn-info" style="width: 200px;"/> 
-                </div>
+
+                <form action="saveCartItems"> 
+                    
+                    <!--qty text field-->
+
+                    <div style="position: absolute; left: 65%; top: 30%; width: 250px; height: 30px;">
+                        <input type="text" name="tf_qty" placeholder="Quantity" class="form-control" required/>
+                    </div>
+                    <!--two buttons for add to cart and buy now-->
+                    <div style="position: absolute; left: 65%; top: 73%; width: 25%; height: 30px;">
+                        <input type="submit" name="btn_add_to_cart" value="Add to cart" class="btn btn-info" style="width: 200px;" /> 
+                    </div>
+                    
+                    
+                </form>
+                    
+                    
+                    
+                    
+                <form>
+                    <div style="position: absolute; left: 65%; top: 81%; width: 25%; height: 30px;">
+                        <input type="submit" name="btn_buy_now" value="Buy now" class="btn btn-info" style="width: 200px;"/> 
+                    </div>
+                </form>
+
+
+
                 <%
 //                    hs.invalidate();
-                    }              
+                    }
                 %>
 
                 <!--free delivery msg-->
-                
+
                 <div style="position: absolute; left: 40%; width: 40%; top: 93%; height: 30px; color: #ff0033; ">
                     Free Island wide Delivery
                 </div>
                 <!--<div style="position: absolute; left: 65%; width: 188px; top: 91%; height: 40px; background-image: url('com.official.cazzendra.images.paymentgateway/payableCards.png') "></div>-->
-                
-                
+
+
             </div>
 
         </div>
