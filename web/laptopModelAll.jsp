@@ -44,26 +44,75 @@
 
                 for (pojos.LaptopModel laps : li) {
             %>
-            <form action="">
 
-                <div style="position: relative; left: 20%; width: 60%; top: 30%; height: 300px; background-color: #ffffff; padding-top: 100px;">
-                    <div style="position: absolute; left: 5%; width: 250px; height: 250px; top: 10%;"><img src="<%= laps.getLaptopModelImagePath()%>"></div>
-                        <%
-                            HttpSession hs = request.getSession();
-                            hs.setAttribute("idLaptop", laps.getLaptopModelLaptopId());
-                        %>
-                    <div style="position: absolute; left: 38%; width: 250px; height: 40px; top: 15%; font-family: inherit; font-weight: 400; font-size: 20px;"><%= laps.getLaptopModelLaptopId()%></div>
-                    <div style="position: absolute; left: 38%; width: 250px; height: 40px; top: 25%;"><%= laps.getLaptopModelProcessor()%></div>
+            <div style="position: relative; left: 20%; width: 60%; top: 30%; height: 300px; background-color: #ffffff; padding-top: 100px;">
+                <div style="position: absolute; left: 95%; top: 0%; width: 64px; height: 64px; background-image: url('com.official.cazzendra.images.paymentgateway/label3.png')"></div>
+
+                <div style="position: absolute; left: 5%; width: 250px; height: 250px; top: 10%;"><img src="<%= laps.getLaptopModelImagePath()%>"></div>
+
+                <div style="position: absolute; left: 38%; width: 250px; height: 40px; top: 15%; font-family: inherit; font-weight: 400; font-size: 20px; color: #999999;">Laptop Model   :</div>
+                <div style="position: absolute; left: 58%; width: 250px; height: 40px; top: 15%; font-family: inherit; font-weight: 400; font-size: 20px;"><%= laps.getLaptopModelLaptopId()%></div>
+                <div style="position: absolute; left: 38%; width: 250px; height: 40px; top: 25%; color: #999999; ">Processor  :</div>
+                <div style="position: absolute; left: 58%; width: 250px; height: 40px; top: 25%;"><%= laps.getLaptopModelProcessor()%></div>
+                <%
+                    laptopPriceDetail lapPriceDetail = laptopPriceDetailController.getLaptopPriceDetailByLaptopModelId(String.valueOf(laps.getLaptopModelLaptopId()));
+                %>
+
+                <div style="position: absolute; left: 38%; top: 65%; width: 250px; height: 40px; font-size: 24px; ">                     
+                    Rs   <%= lapPriceDetail.getLaptopPriceDetailSellingPrice()%> </div>                
+
+                <!--bottom black line-->
+                <div style="position: absolute; left: 0%; top: 98%; width: 100%; height: 5px; background-color: #000000; padding-bottom: 0px;"></div>
+                <!--end of bottom line--> 
+                <form action="laptopModelRedirectToProductSpec"> 
                     <%
-                        laptopPriceDetail lapPriceDetail = laptopPriceDetailController.getLaptopPriceDetailByLaptopModelId(String.valueOf(laps.getLaptopModelLaptopId()));
+                        if (lapPriceDetail.getLaptopPriceDetailQty() == 0) {
+                        } else {
                     %>
-                    <div style="position: absolute; left: 38%; top: 35%; width: 250px; height: 40px;"> <%= lapPriceDetail.getLaptopPriceDetailSellingPrice()%> </div>
-                    <div style="position: relative; left: 0%; top: 98%; width: 100%; height: 5px; background-color: #000000; padding-bottom: 0px;" ></div>
+                    <div style="position: absolute; left: 38%; top: 45%; width: 200px; height: 30px; color: #ffffff; ">                        
+                        <!--more detail button-->
+                        <input type="submit" class="btn btn-info" name="btn-view-detail" value="More Details"/>
+                        <input type="hidden" name="hidden_tf_laptop_model_id" value="<%= laps.getLaptopModelLaptopId()%>"/>
+                    </div>
+                    <%
+                        }
+                    %>
+                </form>
+                <%
+                    if (lapPriceDetail.getLaptopPriceDetailQty() == 0) {
+
+
+                %>
+                <div style="background-color: #ccccff; position: absolute; left: 60%; top: 45%; width: 25%; height: 30%;">
+                    <div style="position: absolute; left: 10%; top: 10%; width: 80%; height: 80%; color: #cc0000; ">
+                        <p>
+                            Stocks are not available at this moment. 
+                        </p>                           
+                    </div>
                 </div>
+                <%     } else if (lapPriceDetail.getLaptopPriceDetailQty() < 10) {
+                %>
+                <div style="background-color: #ccccff; position: absolute; left: 60%; top: 45%; width: 25%; height: 30%;">
+                    <div style="position: absolute; left: 10%; top: 10%; width: 80%; height: 80%; color: #000099; ">
+                        <p>
+                            Stocks are limited. This price valid until stock last. <br>
+                            Available Quantity  : <%= lapPriceDetail.getLaptopPriceDetailQty()%>
+                        </p>                           
+                    </div>
+                </div>
+
                 <%
                     }
                 %>
-            </form>
+
+            </div>
+            <%
+                }
+                tr.commit();
+                ses.close();
+                tr = null;
+            %>
+
         </div>
     </body>
 </html>

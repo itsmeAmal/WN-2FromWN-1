@@ -38,5 +38,10 @@ public class laptopModelController {
     public static LaptopModel getLaptopModelByLaptopModelId(String laptopModelLaotopId)throws SQLException{
         return new laptopModelDaoImpl().getLaptopModelById(laptopModelLaotopId);
     }
+    
+    
+    
+    
+    
 
 }
