@@ -298,11 +298,11 @@
             <div id="create-profile">
             </div>
             <div id="btn-1">
-                <a href="#" class="btn btn-info" style="width: 110px;">LAPTOPS   </a>
+                <a href="laptopModelAll.jsp" class="btn btn-info" style="width: 110px;">LAPTOPS   </a>
             </div>
             <!--            <button id="btn-1" type="button" class="btn btn-warning">Flight Booking</button>-->
             <div id="btn-2">
-                <a href="#" class="btn btn-info" style="width: 110px;">SERVICES   </a>
+                <a href="laptopCartProducts.jsp" class="btn btn-info" style="width: 110px;">CART   </a>
             </div>
             <!--            <button id="btn-2" type="button" class="btn btn-warning">Hotel Services</button>-->
             <div id="btn-3">

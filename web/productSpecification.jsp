@@ -103,8 +103,8 @@
                 </div>
 
 
-                <form action="saveCartItems"> 
-                    
+                <form action="addLaptopsToCart"> 
+
                     <!--qty text field-->
 
                     <div style="position: absolute; left: 65%; top: 30%; width: 250px; height: 30px;">
@@ -114,20 +114,12 @@
                     <div style="position: absolute; left: 65%; top: 73%; width: 25%; height: 30px;">
                         <input type="submit" name="btn_add_to_cart" value="Add to cart" class="btn btn-info" style="width: 200px;" /> 
                     </div>
-                    
-                    
                 </form>
-                    
-                    
-                    
-                    
                 <form>
                     <div style="position: absolute; left: 65%; top: 81%; width: 25%; height: 30px;">
                         <input type="submit" name="btn_buy_now" value="Buy now" class="btn btn-info" style="width: 200px;"/> 
                     </div>
                 </form>
-
-
 
                 <%
 //                    hs.invalidate();

@@ -13,5 +13,5 @@ public enum MethodStatus {
     SUCCESS,
     FAILED,
     DUPLICATE_PRIMARY_KEY,
-    HAS_EMPTY_FIELDS
+    EMPTY_FIELDS
 }

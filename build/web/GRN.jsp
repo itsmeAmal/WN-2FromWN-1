@@ -39,15 +39,15 @@
                             <%                                while (rset.next()) {
                             %>          
                             <option><%= rset.getString("laptop_model_laptop_id")%></option>>
-                                <%
-                                    }
-                                %>
+                            <%
+                                }
+                            %>
                         </select></div>
 
-                    <div style="position: absolute; left: 30%; top: 40%; width: 250px; height: 30px;"><input type="text" name="buying_price" placeholder="Buying Price" class="form-control" /></div>
-                    <div style="position: absolute; left: 30%; top: 50%; width: 250px; height: 30px;"><input type="text" name="selling_price" placeholder="Selling Price" class="form-control" /></div>
-                    <div style="position: absolute; left: 30%; top: 60%; width: 250px; height: 30px;"><input type="text" name="min_selling_price" placeholder="Min Selling Price" class="form-control" /></div>
-                    <div style="position: absolute; left: 30%; top: 70%; width: 250px; height: 30px;"><input type="text" name="quantity" placeholder="Quantity" class="form-control" /></div>
+                    <div style="position: absolute; left: 30%; top: 40%; width: 250px; height: 30px;"><input type="text" name="buying_price" placeholder="Buying Price" class="form-control" required /></div>
+                    <div style="position: absolute; left: 30%; top: 50%; width: 250px; height: 30px;"><input type="text" name="selling_price" placeholder="Selling Price" class="form-control" required/></div>
+                    <div style="position: absolute; left: 30%; top: 60%; width: 250px; height: 30px;"><input type="text" name="min_selling_price" placeholder="Min Selling Price" class="form-control" required/></div>
+                    <div style="position: absolute; left: 30%; top: 70%; width: 250px; height: 30px;"><input type="text" name="quantity" placeholder="Quantity" class="form-control" required/></div>
 
                     <div style="position: absolute; left: 30%; top: 80%; width: 250px; height: 30px;"> <input type="submit" class="btn btn-info" name="btn" value="Add GRN" style="width: 250px"/></div>
 

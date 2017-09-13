@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package ifix.sessionCart;
 
 import java.io.IOException;
@@ -16,14 +17,14 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- *
+ * 
  */
-@WebServlet(name = "RemoveProduct", urlPatterns = {"/RemoveProduct"})
-public class RemoveProduct extends HttpServlet {
+@WebServlet(name = "pay", urlPatterns = {"/pay"})
+public class setEmptyLaptopCart extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and
-     * <code>POST</code> methods.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
      *
      * @param request servlet request
      * @param response servlet response
@@ -33,21 +34,13 @@ public class RemoveProduct extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try {
-            PrintWriter out = response.getWriter();
-            String laptopId = request.getParameter("");
-            out.write(laptopId);
-            CartItem ci = new CartItem();
-            ci.setLaptopModelIdCart(laptopId);
-
-            Cart c = null;
-            HttpSession hs = request.getSession();
-            if (hs.getAttribute("cart") != null) {
-                c = (Cart) hs.getAttribute("cart");
+        HttpSession hs=request.getSession();
+        try (PrintWriter out = response.getWriter()) {
+          if (hs.getAttribute("cart")!=null) {
+                laptopCart c=(laptopCart) hs.getAttribute("cart");
+                c.removeAllItem();
             }
-            c.removeItem(ci);
-            response.sendRedirect("index.jsp");
-        } catch (Exception e) {
+          response.sendRedirect("index.jsp");
         }
     }
 

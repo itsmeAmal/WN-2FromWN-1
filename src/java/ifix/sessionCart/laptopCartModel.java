@@ -6,15 +6,17 @@
 
 package ifix.sessionCart;
 
+import java.math.BigDecimal;
+
 /**
  *
  *
  */
-public class CartItem {
+public class laptopCartModel {
     private int laptopIdCart;
     private String laptopModelIdCart;
-    private double laptopQty;
-    private double laptopSellingPrice;
+    private BigDecimal laptopQty;
+    private BigDecimal laptopSellingPrice;
 
     /**
      * @return the laptopIdCart
@@ -47,28 +49,28 @@ public class CartItem {
     /**
      * @return the laptopQty
      */
-    public double getLaptopQty() {
+    public BigDecimal getLaptopQty() {
         return laptopQty;
     }
 
     /**
      * @param laptopQty the laptopQty to set
      */
-    public void setLaptopQty(double laptopQty) {
+    public void setLaptopQty(BigDecimal laptopQty) {
         this.laptopQty = laptopQty;
     }
 
     /**
      * @return the laptopSellingPrice
      */
-    public double getLaptopSellingPrice() {
+    public BigDecimal getLaptopSellingPrice() {
         return laptopSellingPrice;
     }
 
     /**
      * @param laptopSellingPrice the laptopSellingPrice to set
      */
-    public void setLaptopSellingPrice(double laptopSellingPrice) {
+    public void setLaptopSellingPrice(BigDecimal laptopSellingPrice) {
         this.laptopSellingPrice = laptopSellingPrice;
     }
 

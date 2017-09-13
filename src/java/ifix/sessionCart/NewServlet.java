@@ -38,7 +38,7 @@ public class NewServlet extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             HttpSession hs=request.getSession();
             if (hs.getAttribute("cart")!=null) {
-                Cart c=(Cart) hs.getAttribute("cart");
+                laptopCart c=(laptopCart) hs.getAttribute("cart");
                 c.removeAllItem();
             }
         }
