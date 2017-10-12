@@ -101,8 +101,16 @@ public class laptopPriceDetailDaoImpl implements laptopPriceDetailDao {
             laptopPriceDetail1.setLaptopPriceDetailMinSellingPrice(rset.getBigDecimal("laptop_price_detail_min_selling_price"));
             laptopPriceDetail1.setLaptopPriceDetailStatus(rset.getInt("laptop_price_detail_status"));
             laptopPriceDetail1.setLaptopPriceDetailQty(rset.getInt("laptop_price_detail_qty"));
-            laptopPriceDetail1.setLaptopPriceDetailDate(rset.getDate("laptop_price_detail_date"));   
+            laptopPriceDetail1.setLaptopPriceDetailDate(rset.getDate("laptop_price_detail_date"));
         }
         return laptopPriceDetail1;
+    }
+
+    @Override
+    public ResultSet getAllLowQtyLaptopDetails() throws SQLException {
+        Connection con = DatabaseConnection2.getDatabaseConnection();
+        PreparedStatement ps = con.prepareStatement("SELECT count(laptop_price_detail_qty) FROM laptop_price_detail join laptop_model on "
+                + "laptop_price_detail_model_id = laptop_model_laptop_id where laptop_price_detail_qty < 10 order by laptop_model_laptop_id");
+        return ps.executeQuery();
     }
 }

@@ -76,4 +76,14 @@ public class laptopPriceDetailController {
         return lapPriceDetail;
     }
 
+    public static int loptopLowQtyDetails() throws SQLException {
+        int qty = 0;
+        laptopPriceDetailDaoImpl priceDetailDaoImpl = new laptopPriceDetailDaoImpl();
+        ResultSet rset = priceDetailDaoImpl.getAllLowQtyLaptopDetails();
+        while (rset.next()) {
+            qty = rset.getInt(1);
+        }
+        System.out.println(qty);
+        return qty;
+    }
 }

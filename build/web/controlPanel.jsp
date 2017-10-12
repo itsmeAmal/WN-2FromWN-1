@@ -4,6 +4,8 @@
     Author     : 4m4l
 --%>
 
+<%@page import="ifix.core.sessionHandler"%>
+<%@page import="ifix.controller.laptopPriceDetailController"%>
 <%@page import="ifix.controller.userController"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -86,11 +88,26 @@
                 color: #ffffff;
                 font-size: 40px;
             }
+            #divMenuBox3_infoBox{
+                position: absolute;
+                top: 23%;
+                width: 19%;
+                height: 18%;
+                left: 59%;
+                background-color: #cc0066;
+                color: #ffffff;
+                font-size: 40px;
+
+            }
             #divMenuBox2_infoBox_value{
                 position: relative;
                 left: 40%;
                 top: 35%;
-
+            }
+            #divMenuBox3_infoBox_value{
+                position: relative;
+                left: 40%;
+                top: 35%;
             }
             #divMenuBox2_menuTxt{
                 position: relative;
@@ -108,6 +125,15 @@
                 height: 9%;
                 width: 19%;
                 background-color: #ff6666;
+            }
+            #divMenuBox3_menuTxt{
+                position: relative;
+                left: 20%;
+                top: 25%;
+                width: 60%;
+                height: 60%;
+                font-size: 24px;
+                font-weight: 400;               
             }
             #divMenuBox4{
                 position: absolute;
@@ -297,9 +323,9 @@
             }
             #divMenuBox1_menuTxt{
                 position: relative;
-                left: 20%;
+                left: 10%;
                 top: 25%;
-                width: 60%;
+                width: 70%;
                 height: 60%;
                 font-size: 24px;
                 font-weight: 400;
@@ -308,6 +334,7 @@
         </style>
     </head>
     <body>
+
         <div id="divOuter"> 
             <%--<jsp:include page='buttonGroup.jsp'></jsp:include>--%>
             <div id="divTopBlueLine"></div>
@@ -326,8 +353,6 @@
                 <div id="addGrn"> <a style="color: #ffffff;" href="GRN.jsp">GRN Add</a></div>
                 <div id="viewGrnAll"> <a style="color: #ffffff;" href="GrnStockDetails.jsp">Stock Records</a> </div>
                 <div id="allProducts"> <a style="color: #ffffff;" href="laptopModelAll.jsp">Products - Cust.View</a> </div>
-
-
                 <div id="divLeftBlackSpace_accounts_management">Accounts</div>
                 <div id="accounts"> <a style="color: #ffffff;" href="accountStatusViewAll.jsp">Income / Expenses</a> </div>
             </div>
@@ -335,14 +360,15 @@
                 <div id="divTopWhiteSpece_lblDashBoard">Dashboard   /</div>
             </div>
             <div id="divMenuBox1">
-                <div id="divMenuBox1_menuTxt">Global Users</div>
+                <div id="divMenuBox1_menuTxt">Registered Users</div>
                 <div id="divMenuBox1_worldIcon"></div>               
             </div>
             <div id="divMenuBox2">
-                <div id="divMenuBox2_menuTxt">Mail</div>
+                <div id="divMenuBox2_menuTxt">Online..</div>
                 <div id="divMenuBox2_mailIcon"></div>
             </div>
             <div id="divMenuBox3">
+                <div id="divMenuBox3_menuTxt">Low Stocks</div>
                 <div id="divMenuBox3_fieldsIcon"></div>
             </div>
             <div id="divMenuBox4">
@@ -357,7 +383,19 @@
                 </div>
             </div>
             <div id="divMenuBox2_infoBox">
-                <div id="divMenuBox2_infoBox_value"></div>
+                <% int sessionCount = sessionHandler.getActiveSessions();%>
+                <div id="divMenuBox2_infoBox_value">
+                    <%=sessionCount%>
+                </div>
+            </div>
+            <div id="divMenuBox3_infoBox">
+                <%
+                    int qty = laptopPriceDetailController.loptopLowQtyDetails();
+                %>
+                <div id="divMenuBox3_infoBox_value">
+                    <%=qty%>
+                </div>
+
             </div>
 
         </div>

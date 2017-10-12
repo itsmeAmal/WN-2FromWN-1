@@ -5,7 +5,6 @@
  */
 package ifix.connection;
 
-import ifix.dao.Impl.userDaoImpl;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -18,13 +17,17 @@ import java.util.logging.Logger;
  */
 public class DatabaseConnection2 {
 
-    public static Connection getDatabaseConnection() throws SQLException {
+    public static Connection getDatabaseConnection() throws SQLException{
+        Connection con = null;
         try {
+
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
-            Logger.getLogger(userDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/iFixLaptops", "root", "55555");
+
+        } catch (ClassNotFoundException  | InstantiationException | IllegalAccessException ex) {
+            Logger.getLogger(DatabaseConnection2.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/iFixLaptops", "root", "55555");
         return con;
     }
 

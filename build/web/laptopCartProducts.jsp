@@ -18,7 +18,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title> Users | iFix</title>
 
-        <style>
+        <style> 
             #logo{
                 position: absolute;
                 left: 65%;
@@ -66,7 +66,6 @@
         <div style="position: absolute; left: 0px; width: 100%; top: 0px; height: 100%; background-color: #000000;">
             <div id="logo"></div>
             <div style="position: absolute; left: 10%; width: 80%; top: 30%; height: content-box; background-color: #ffffff;">
-
                 <table id="accounts">
                     <th>Laptop Model</th>
                     <th>Quantity</th>                    
@@ -87,22 +86,20 @@
                         %>
                     <form action="removeLaptopFromCart">
                         <tr class="table-responsive">
-                            <td><%= ci.getLaptopModelIdCart()%></td>
+                            <td><%= ci.getLaptopModelIdCart()%></td> 
                             <td><%= ci.getLaptopQty()%></td>
                             <td><%= ci.getLaptopSellingPrice()%></td>
                             <td><%= subtot%></td>                                
                             <td> <input type="submit" name="btn-1" value="REMOVE" class="btn btn-danger" style="height: 35;" />  </td>
                         <input type="hidden" name="hiddenModelId" value="<%= ci.getLaptopModelIdCart() %>"/>
                         </tr>
-                    </form>
+                    </form> 
                     <%
                             }
                         }
                     %>
                 </table>
-
             </div>
         </div>
-
     </body>
 </html>
