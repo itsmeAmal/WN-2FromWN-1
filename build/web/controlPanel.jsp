@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
         <title>Control Panel</title>
         <style>
             #divOuter{               
@@ -363,7 +363,7 @@
                 <div id="divMenuBox1_menuTxt">Registered Users</div>
                 <div id="divMenuBox1_worldIcon"></div>               
             </div>
-            <div id="divMenuBox2">
+            <div id="divMenuBox2"> 
                 <div id="divMenuBox2_menuTxt">Online..</div>
                 <div id="divMenuBox2_mailIcon"></div>
             </div>
@@ -395,9 +395,7 @@
                 <div id="divMenuBox3_infoBox_value">
                     <%=qty%>
                 </div>
-
             </div>
-
         </div>
     </body>
 </html>

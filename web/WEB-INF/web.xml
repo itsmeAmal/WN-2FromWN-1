@@ -14,7 +14,7 @@
     <welcome-file-list>
         <welcome-file>newSliderHome.jsp</welcome-file>
     </welcome-file-list>
-    <error-page>
+<!--    <error-page>
         <error-code>404</error-code>
         <location>/errorCommon.jsp</location>
     </error-page>
@@ -33,5 +33,5 @@
     <error-page>
         <error-code>500</error-code>
         <location>/errorCommon.jsp</location>
-    </error-page>
+    </error-page>-->
 </web-app>

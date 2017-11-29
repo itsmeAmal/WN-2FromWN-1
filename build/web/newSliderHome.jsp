@@ -274,9 +274,12 @@
             .cap3 {background-image:url(com.official.cazzendra.images.background/caption3.png)}
             .cap4 {background-image:url(com.official.cazzendra.images.background/caption4.png)}
         </style>
-
         <%--end of - javascript image slider--%>
-
+        <%
+            HttpSession hs = request.getSession();
+            hs.setAttribute("logtime", "firstlogin");
+            
+        %>
     </head>
     <body style="position: absolute; width: ">
         <div id="background">
@@ -288,7 +291,19 @@
             <div id="logo">
             </div>
             <div id="login_1">
-                <a href="controlPanel.jsp" style="font-family: inherit; font-size: 18px; font-weight: 100; text-align: center" >Administrator Login</a>
+                <%
+                    if (hs.getAttribute("loginStatus").toString().equals("false") && hs.getAttribute("logtime").toString().equals("firstlogin")) {
+                %>
+                <a href="login2.jsp" style="font-family: inherit; font-size: 18px; font-weight: 100; text-align: center" >Login</a>
+                <%
+                } else {
+                    if (hs.getAttribute("loggedUserName") != null) {
+                %>                       
+                <h6>Logged as :   <%= (String) hs.getAttribute("loggedUserName")%></h6>                            
+                <%
+                        }
+                    }
+                %> 
             </div>
             <div id="hotline">
                 Hot Line - +(0)94 71 1023 694

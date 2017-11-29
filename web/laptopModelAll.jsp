@@ -4,6 +4,7 @@
     Author     : 4m4l
 --%>
 
+<%@page import="org.hibernate.criterion.Order"%>
 <%@page import="ifix.controller.laptopPriceDetailController"%>
 <%@page import="ifix.dao.Impl.laptopPriceDetailDaoImpl"%>
 <%@page import="ifix.model.laptopPriceDetail"%>
@@ -39,6 +40,7 @@
                 Session ses = sf.openSession();
                 Transaction tr = ses.beginTransaction();
                 Criteria cr = ses.createCriteria(pojos.LaptopModel.class);
+                cr.addOrder(Order.asc("laptopModelLaptopId"));
                 List<pojos.LaptopModel> li = cr.list();
                 //------------------------------------
 

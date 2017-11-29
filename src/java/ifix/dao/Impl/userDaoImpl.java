@@ -71,7 +71,7 @@ public class userDaoImpl implements userDao {
     @Override
     public User getFirstUserFromResultset(ResultSet resultSet) throws SQLException {
         User user = null;
-        while (resultSet.next()) {
+        while (resultSet.next()) { 
             user = new User();
             user.setUserId(resultSet.getInt("user_id"));
             user.setUserName(resultSet.getString("user_name"));
@@ -104,7 +104,7 @@ public class userDaoImpl implements userDao {
 
     @Override
     public User getUserByName(String userName) throws SQLException {
-        ResultSet rset = getUsersByOneAttribute("user_name", " LIKE ", userName);
+        ResultSet rset = getUsersByOneAttribute("user_email", " LIKE ", userName);
         User user = getFirstUserFromResultset(rset);
         return user;
     }
